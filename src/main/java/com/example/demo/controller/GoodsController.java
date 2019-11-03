@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.Goods;
+import com.example.demo.model.GoodsList;
 import com.example.demo.service.GoodsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -17,7 +19,8 @@ public class GoodsController {
     GoodsService goodsService;
     @GetMapping("")
     @ApiOperation("获得所有商品")
-    public Object getAllGoods(){
-       return goodsService.getGoods();
+    public GoodsList getAllGoods(){
+        GoodsList list=new GoodsList();
+       return list;
     }
 }
