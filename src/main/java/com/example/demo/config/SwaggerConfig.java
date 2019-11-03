@@ -6,7 +6,6 @@ import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -19,6 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
         public Docket buildDocket(){
             return new Docket(DocumentationType.SWAGGER_2)
                     .apiInfo(buildApiInf())
+                    .useDefaultResponseMessages(false)
                     .select()
                     .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
                     .paths(PathSelectors.any())
@@ -29,10 +29,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
             return new ApiInfoBuilder()
                     .title("xingguo大标题")
                     .description("springboot swagger2")
-                    .termsOfServiceUrl("http://blog.csdn.net/u014231523网址链接")
                     .version("1.0")
                     .build();
-
         }
 
     }
