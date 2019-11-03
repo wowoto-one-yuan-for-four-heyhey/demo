@@ -25,6 +25,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
                     .build();
         }
 
+
         private ApiInfo buildApiInf(){
             return new ApiInfoBuilder()
                     .title("xingguo大标题")
