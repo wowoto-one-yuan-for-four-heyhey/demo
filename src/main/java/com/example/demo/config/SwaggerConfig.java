@@ -20,7 +20,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
             return new Docket(DocumentationType.SWAGGER_2)
                     .apiInfo(buildApiInf())
                     .select()
-                    .apis(RequestHandlerSelectors.basePackage("com.xingguo.springboot.controller"))
+                    .apis(RequestHandlerSelectors.basePackage("com.example.demo.controller"))
                     .paths(PathSelectors.any())
                     .build();
         }
