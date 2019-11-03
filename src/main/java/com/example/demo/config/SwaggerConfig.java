@@ -30,7 +30,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
                     .title("xingguo大标题")
                     .description("springboot swagger2")
                     .termsOfServiceUrl("http://blog.csdn.net/u014231523网址链接")
-                    .contact(new Contact("diaoxingguo", "http://blog.csdn.net/u014231523", "diaoxingguo@163.com"))
+                    .version("1.0")
                     .build();
 
         }
