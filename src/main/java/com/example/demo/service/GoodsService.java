@@ -7,9 +7,9 @@ import java.util.Map;
 
 @Service
 public class GoodsService {
-public Object getGoods()
+public HashMap<String, String> getGoods()
 {
-    Map map=new HashMap();
+    HashMap<String, String> map=new HashMap();
     map.put("1","爆炒橘子皮");
     map.put("2","酥炸老干妈");
     map.put("3","醋溜五仁月饼");

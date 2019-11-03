@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import com.example.demo.entity.LitemallGoods;
 import com.example.demo.model.Goods;
 import com.example.demo.model.GoodsList;
 import com.example.demo.service.GoodsService;
@@ -18,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class GoodsController {
     @Autowired
     GoodsService goodsService;
+
     @GetMapping("")
-    @ApiOperation(value = "获得所有商品", response = GoodsList.class)
-    public GoodsList getAllGoods(){
-        GoodsList list=new GoodsList();
-       return list;
+    @ApiOperation(value = "获得所有商品")
+    public LitemallGoods getAllGoods(){
+        return new LitemallGoods();
     }
 }

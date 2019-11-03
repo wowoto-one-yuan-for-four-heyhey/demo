@@ -24,11 +24,10 @@ public class UserService {
         map.put("age","15");
         return map;
     }
-    public Object getUserAddress(String id)
+    public Address getUserAddress(String id)
     {
         Map map=new HashMap();
         Address address=new Address("中国","福建省","厦门市","滨海街道","131312121","me");
-        map=address.getAddress();
-        return map;
+        return address;
     }
 }

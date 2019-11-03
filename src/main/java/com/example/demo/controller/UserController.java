@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.model.Address;
 import com.example.demo.model.Goods;
 import com.example.demo.service.UserService;
 import io.swagger.annotations.*;
@@ -33,7 +34,7 @@ public class UserController {
 
     @GetMapping("{id}/address")
     @ApiOperation("获得特定用户地址信息")
-    public Object getUserAddress(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id){
+    public Address getUserAddress(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id){
         return userService.getUserAddress(id);
     }
 }

@@ -18,8 +18,40 @@ public class Address {
     private String street;
     @ApiModelProperty(name="telephone",value = "电话",required = true)
     private String telephone;
+
+    public String getCountry() {
+        return country;
+    }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public String getConsignee() {
+        return consignee;
+    }
+
     @ApiModelProperty(name="consignee",value = "收货人姓名",required = true)
     private String consignee;
+
+
+
     public Address(String country,String province,String city,String street,String telephone,String consignee) {
         this.country = country;
         this.province=province;
@@ -27,16 +59,5 @@ public class Address {
         this.street= street;
         this.telephone=telephone;
         this.consignee= consignee;
-    }
-    public Map getAddress()
-    {
-        LinkedHashMap map=new LinkedHashMap();
-        map.put("国家",this.country);
-        map.put("省份",this.province);
-        map.put("城市",this.city);
-        map.put("街道",this.street);
-        map.put("电话",this.telephone);
-        map.put("收货人姓名",this.consignee);
-        return map;
     }
 }
