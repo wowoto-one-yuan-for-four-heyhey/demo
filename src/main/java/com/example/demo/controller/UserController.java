@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
     @Autowired
     UserService userService;
+
     @GetMapping("")
     @ApiOperation("获得所有用户信息")
     public Object getAllUsers(){
