@@ -36,7 +36,7 @@ public class CouponController {
         return ;
     }
 
-    @PostMapping("{couponId}")
+    @PostMapping("")
     @ApiOperation("建立新的coupon")
     public void postCoupon(){
         return ;
@@ -49,7 +49,7 @@ public class CouponController {
     }
 
 
-    @PostMapping("couponrule/{couponRuleId}")
+    @PostMapping("couponrule")
     @ApiOperation("管理员上传新的couponRule")
     public void postNewCouponRule(){
         return ;
