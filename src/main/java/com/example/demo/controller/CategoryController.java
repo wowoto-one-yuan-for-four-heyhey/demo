@@ -14,6 +14,11 @@ public class CategoryController {
 
     @GetMapping("")
     @ApiOperation("获得分类详情")
-    public Object cat_get(){return new Object();}
+    public Object getAllCategory(){return new Object();}
+
+
+
+
+
 
 }
