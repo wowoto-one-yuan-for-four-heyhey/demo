@@ -24,7 +24,7 @@ public class CouponController {
         return ;
     }
 
-    @GetMapping("{couponId}/couponRule")
+    @GetMapping("{couponId}/couponrule")
     @ApiOperation("获得特定优惠券的，优惠券规则")
     public void getCouponCouponRule(@ApiParam(name="couponId",value="优惠券id",required=true) @PathVariable String id){
         return ;
@@ -49,26 +49,26 @@ public class CouponController {
     }
 
 
-    @PostMapping("couponRule/{couponRuleId}")
+    @PostMapping("couponrule/{couponRuleId}")
     @ApiOperation("管理员上传新的couponRule")
     public void postNewCouponRule(){
         return ;
     }
 
-    @PutMapping("couponRule/{couponRuleId}")
+    @PutMapping("couponrule/{couponRuleId}")
     @ApiOperation("管理员修改特定couponRule")
     public void putCouponRule(){
         return ;
     }
 
 
-    @DeleteMapping("couponRule/{couponRuleId}")
+    @DeleteMapping("couponrule/{couponRuleId}")
     @ApiOperation("管理员删除特定couponRule")
     public void deleteCouponRule(){
         return ;
     }
 
-    @GetMapping("couponRule/{couponRuleId}/user")
+    @GetMapping("couponrule/{couponRuleId}/user")
     @ApiOperation("管理员获得特定couponRule的user")
     public void getCouponRuleUserId(){
         return ;
