@@ -25,4 +25,5 @@ public class GoodsController {
     public LitemallGoods getAllGoods(){
         return new LitemallGoods();
     }
+
 }
