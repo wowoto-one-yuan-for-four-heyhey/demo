@@ -19,7 +19,7 @@ public class UserService {
 
 
 
-    public Object getUserInfo(String id)
+    public Object getUserInfo(int id)
     {
         Map map=new HashMap();
         map.put("id",id);
@@ -29,7 +29,7 @@ public class UserService {
     }
 
 
-    public Address getUserAddress(String id)
+    public Address getUserAddress(int id)
     {
         Address address=new Address("中国","福建省","厦门市","滨海街道","131312121","me");
         return address;
