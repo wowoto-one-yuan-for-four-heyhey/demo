@@ -7,57 +7,58 @@ import org.springframework.web.bind.annotation.*;
 
 @Api(tags={"专题操作接口"})
 @RestController
-@RequestMapping("/topic")
+@RequestMapping("/topics")
 public class TopicController {
 
     @GetMapping("")
-    @ApiOperation("获得所有话题")
+    @ApiOperation("获得所有专题")
     public void getAllTopics(){
     }
 
     @PostMapping("")
-    @ApiOperation("创建新话题")
+    @ApiOperation("创建新专题")
     public void createTopic(){
     }
 
     @GetMapping("{topicId}")
-    @ApiOperation("获得特定话题")
+    @ApiOperation("获得特定专题")
     public void getTopic(){
     }
 
     @PatchMapping("{topicId}")
-    @ApiOperation("修改特定话题")
+    @ApiOperation("修改特定专题")
     public void updateTopic(){
     }
 
     @DeleteMapping("{topicId}")
-    @ApiOperation("删除特定话题")
+    @ApiOperation("删除特定专题")
     public void deleteTopic(){
     }
 
-    @GetMapping("{topicId}/comment")
-    @ApiOperation("获得特定话题下的评论")
+    @GetMapping("{topicId}/comments")
+    @ApiOperation("获得特定专题下的评论")
     public void getTopicComments(){
     }
 
-    @PostMapping("{topicId}/comment")
-    @ApiOperation("创建特定话题下的评论")
+    @PostMapping("{topicId}/comments")
+    @ApiOperation("创建特定专题下的评论")
     public void createTopicComment(){
     }
 
-    @DeleteMapping("{topicId}/comment")
-    @ApiOperation("删除特定话题下的所有评论")
+    @DeleteMapping("{topicId}/comments")
+    @ApiOperation("删除特定专题下的所有评论")
     public void deleteTopicComments(){
     }
 
-    @PatchMapping("{topicId}/comment/{commentId}")
-    @ApiOperation("修改特定话题下的评论")
+    @PatchMapping("{topicId}/comments/{commentId}")
+    @ApiOperation("修改或审核特定专题下的评论")
     public void updateTopicComment(){
     }
 
-    @DeleteMapping("{topicId}/comment/{commentId}")
-    @ApiOperation("修改特定话题下的特定评论")
+    @DeleteMapping("{topicId}/comments/{commentId}")
+    @ApiOperation("删除特定专题下的特定评论")
     public void deleteTopicComment(){
     }
+
 
 }

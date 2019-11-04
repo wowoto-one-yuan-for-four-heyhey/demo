@@ -99,9 +99,9 @@ public class GoodsController {
         return new LitemallGoods();
     }
 
-    @GetMapping("pre-sale/search")
+    @GetMapping("pre-sale/{name}")
     @ApiOperation(value = "根据商品名获得某种预售商品的所有信息")
-    public Object searchPreSaleGoods(@NotNull @RequestParam String name) {
+    public Object searchPreSaleGoods(@PathVariable("name") String name) {
         return new LitemallGoods();
     }
 
@@ -112,7 +112,7 @@ public class GoodsController {
     }
 
     @PutMapping("pre-sale/{id}")
-    @ApiOperation(value = "修改预售商品信息")
+    @ApiOperation(value = "修改特定预售商品信息")
     public Object updatePreSaleGoods(@PathVariable("id") Integer id,@RequestBody Goods goods){
         return new LitemallGoods();
     }

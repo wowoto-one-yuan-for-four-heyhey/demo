@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Api(value="用户controller",tags={"优惠券操作接口"})
 @RestController
-@RequestMapping("/coupon")
+@RequestMapping("/coupons")
 public class CouponController {
 
     @GetMapping("")
@@ -20,57 +20,57 @@ public class CouponController {
 
     @GetMapping("{couponId}")
     @ApiOperation("获得特定优惠券信息")
-    public void getCouponInfo(@ApiParam(name="couponId",value="优惠券id",required=true) @PathVariable String id){
+    public void getCouponsInfo(@ApiParam(name="couponId",value="优惠券id",required=true) @PathVariable String id){
         return ;
     }
 
-    @GetMapping("{couponId}/couponrule")
+    @GetMapping("{couponId}/coupon-rules")
     @ApiOperation("获得特定优惠券的，优惠券规则")
-    public void getCouponCouponRule(@ApiParam(name="couponId",value="优惠券id",required=true) @PathVariable String id){
+    public void getCouponsCouponRules(@ApiParam(name="couponId",value="优惠券id",required=true) @PathVariable String id){
         return ;
     }
 
     @DeleteMapping("{couponId}")
-    @ApiOperation("管理员删除特定coupon")
-    public void deleteCoupon(){
+    @ApiOperation("管理员删除特定优惠券")
+    public void deleteCoupons(){
         return ;
     }
 
     @PostMapping("")
-    @ApiOperation("建立新的coupon")
-    public void postCoupon(){
+    @ApiOperation("建立新的优惠券")
+    public void postCoupons(){
         return ;
     }
 
     @PutMapping("{couponId}")
-    @ApiOperation("修改特定coupon")
-    public void putCoupon(){
+    @ApiOperation("修改特定优惠券")
+    public void putCoupons(){
         return ;
     }
 
 
-    @PostMapping("couponrule")
-    @ApiOperation("管理员上传新的couponRule")
-    public void postNewCouponRule(){
+    @PostMapping("coupon-rules")
+    @ApiOperation("管理员上传新的优惠券规则")
+    public void postNewCouponRules(){
         return ;
     }
 
-    @PutMapping("couponrule/{couponRuleId}")
-    @ApiOperation("管理员修改特定couponRule")
-    public void putCouponRule(){
+    @PutMapping("coupon-rules/{couponRuleId}")
+    @ApiOperation("管理员修改特定优惠券规则")
+    public void putCouponRules(){
         return ;
     }
 
 
-    @DeleteMapping("couponrule/{couponRuleId}")
-    @ApiOperation("管理员删除特定couponRule")
-    public void deleteCouponRule(){
+    @DeleteMapping("coupon-rules/{couponRuleId}")
+    @ApiOperation("管理员删除特定优惠券规则")
+    public void deleteCouponRules(){
         return ;
     }
 
-    @GetMapping("couponrule/{couponRuleId}/user")
-    @ApiOperation("管理员获得特定couponRule的user")
-    public void getCouponRuleUserId(){
+    @GetMapping("coupon-rules/{couponRuleId}/coupons")
+    @ApiOperation("管理员获得特定优惠券规则的优惠券")
+    public void getCouponsRuleCoupons(){
         return ;
     }
 
