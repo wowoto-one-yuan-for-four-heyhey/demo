@@ -17,19 +17,19 @@ public class BrandController {
     @ApiOperation("获得所有品牌")
     public Object getAllBrands(){return new Object();}
 
-    @GetMapping("/{category_id}")
+    @GetMapping("/{category-id}")
     @ApiOperation("获取指定分类下的品牌")
     public Object getBrandsOfGivenCategory(){return new Object();}
 
-    @GetMapping("/{key_word}")
+    @GetMapping("/{key-word}")
     @ApiOperation("获取指定关键字下的品牌")
     public Object getBrandsOfGivenKeyWord(){return new Object();}
 
-    @GetMapping("/{brand_id}/information")
+    @GetMapping("/{brand-id}/information")
     @ApiOperation("获取指定品牌相关信息")
     public Object getInformationOfGivenBrand(){return new Object();}
 
-    @GetMapping("/{brand_id}/products")
+    @GetMapping("/{brand-id}/products")
     @ApiOperation("获取指定品牌下的商品")
     public Object getProductsOfGivenBrand(){return new Object();}
 }
