@@ -18,7 +18,7 @@ public class ShareController {
         return "分享活动信息";
     }
 
-    @GetMapping("user/{userId}")
+    @GetMapping("users/{userId}")
     @ApiOperation(value = "根据userId获得某个分享活动的信息")
     public Object getSharesByUser(@PathVariable("userId") Integer userId){
         return "分享活动信息";
