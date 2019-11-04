@@ -43,7 +43,7 @@ public class CouponController {
     }
 
     @PutMapping("{couponId}")
-    @ApiOperation("管理员修改特定coupon")
+    @ApiOperation("修改特定coupon")
     public void putCoupon(){
         return ;
     }
