@@ -14,7 +14,7 @@ public class CategoryController {
 
     @GetMapping("")
     @ApiOperation("获得分类详情")
-    public Object getAllCategory(){return new Object();}
+    public Object getAllCategorys(){return new Object();}
 
 
     @GetMapping("{categoryId}")
@@ -39,24 +39,24 @@ public class CategoryController {
         return true;
     }
 
-    @GetMapping("{categoryId}/subcategory/{subCategoryId}")
+    @GetMapping("{categoryId}/subcategorys/{subCategoryId}")
     @ApiOperation("获得特定一级分类下二级分类商品详情")
     public Object getSubCategory(){return new Object();}
 
 
-    @PostMapping("{categoryId}/subcategory")
+    @PostMapping("{categoryId}/subcategorys")
     @ApiOperation(value = "创建特定一级分类下二级分类商品")
     public void createSubCategory(){
         return ;
     }
 
-    @PutMapping("{categoryId}/subcategory/{subCategoryId}")
+    @PutMapping("{categoryId}/subcategorys/{subCategoryId}")
     @ApiOperation(value = "修改特定一级分类下二级分类商品")
     public Object updateSubCategory(@PathVariable("id") Integer id,@RequestBody Goods goods){
         return new LitemallGoods();
     }
 
-    @DeleteMapping("{categoryId}/subcategory/{subCategoryId}")
+    @DeleteMapping("{categoryId}/subcategorys/{subCategoryId}")
     @ApiOperation(value = "删除特定一级分类下二级分类商品详情")
     public Object deleteSubCategory(@PathVariable("id") Integer id){
         return true;
