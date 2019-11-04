@@ -41,7 +41,7 @@ public class OrderController {
     @ApiOperation("申请退款")
     public Object refundOrder(){return new Object();}
 
-    @GetMapping("/{user-id}/x-comment")
+    @GetMapping("/{user-id}/{status}")
     @ApiOperation("查看待评价商品")
     public Object getNotCommentYetOrder(){return new Object();}
 
