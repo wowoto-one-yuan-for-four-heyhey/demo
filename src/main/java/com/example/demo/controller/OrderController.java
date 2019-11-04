@@ -9,43 +9,43 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/order")
 public class OrderController {
 
-    @GetMapping("/list")
-    @ApiOperation("获取订单列表")
-    public Object getOrdersList(){return new Object();}
+    @GetMapping("/{user-id}}")
+    @ApiOperation("查看全部订单")
+    public Object getAllOrders(){return new Object();}
 
-    @GetMapping("/detail")
-    @ApiOperation("获取订单详情")
-    public Object getOrdersDetail(){return new Object();}
+    @GetMapping("/{user-id}/{order-id}/detail")
+    @ApiOperation("查看指定订单详情")
+    public Object getOrderDetail(){return new Object();}
 
-    @PostMapping("/submit")
+    @PostMapping("/{user-id}/{order-id}/creation}")
     @ApiOperation("创建订单")
     public Object createOrder(){return new Object();}
 
-    @PatchMapping("/cancel")
+    @PatchMapping("/{user-id}/{order-id}/cancellation")
     @ApiOperation("取消订单")
     public Object cancelOrder(){return new Object();}
 
-    @PostMapping("/prepay")
-    @ApiOperation("微信预支付交易单")
-    public Object createWXPrepayOrder(){return new Object();}
+    @PostMapping("/{user-id}/{order-id}/wx-advance-payment")
+    @ApiOperation("创建微信预支付订单")
+    public Object createWXAdvancePaymentOrder(){return new Object();}
 
-    @PatchMapping("/confirm")
+    @PatchMapping("/{user-id}/{order-id}/confirmation")
     @ApiOperation("确认收货")
     public Object confirmOrder(){return new Object();}
 
-    @PatchMapping("/delete")
-    @ApiOperation("订单删除")
+    @PatchMapping("/{user-id}/{order-id}/deletion")
+    @ApiOperation("删除订单")
     public Object deleteOrder(){return new Object();}
 
-    @PatchMapping("/refund")
-    @ApiOperation("订单退款")
+    @PatchMapping("/{user-id}/{order-id}/refund")
+    @ApiOperation("申请退款")
     public Object refundOrder(){return new Object();}
 
-    @GetMapping("/goods")
-    @ApiOperation("待评价商品")
-    public Object getGoodsToBeEvaluated(){return new Object();}
+    @GetMapping("/{user-id}/x-comment")
+    @ApiOperation("查看待评价商品")
+    public Object getNotCommentYetOrder(){return new Object();}
 
-    @PostMapping("/comment")
-    @ApiOperation("订单评价")
-    public Object commentGoods(){return new Object();}
+    @PostMapping("/{user-id}/{order-id}/comment")
+    @ApiOperation("评价订单")
+    public Object commentOrder(){return new Object();}
 }
