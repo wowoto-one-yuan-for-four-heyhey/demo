@@ -16,6 +16,9 @@ public class UserService {
         map.put("3","tr");
         return map;
     }
+
+
+
     public Object getUserInfo(String id)
     {
         Map map=new HashMap();
@@ -24,10 +27,14 @@ public class UserService {
         map.put("age","15");
         return map;
     }
+
+
     public Address getUserAddress(String id)
     {
-        Map map=new HashMap();
         Address address=new Address("中国","福建省","厦门市","滨海街道","131312121","me");
         return address;
     }
+
+
+
 }
