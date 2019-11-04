@@ -37,6 +37,12 @@ public class CouponController {
     }
 
 
+    @DeleteMapping("{couponId}/status")
+    @ApiOperation("删除特定coupon")
+    public void deleteCoupon(){
+        return ;
+    }
+
 
     @GetMapping("{couponId}/time")
     @ApiOperation("获得特定优惠券的时间信息")
@@ -76,7 +82,7 @@ public class CouponController {
 
     @PutMapping("couponRule/{couponRuleId}")
     @ApiOperation("管理员修改特定couponRule")
-    public void PutCouponRule(){
+    public void putCouponRule(){
         return ;
     }
 
