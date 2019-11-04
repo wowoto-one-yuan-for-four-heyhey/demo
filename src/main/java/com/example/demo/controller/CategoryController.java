@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Api(value="用户controller",tags={"分类操作接口"})
 @RestController
-@RequestMapping("/category")
+@RequestMapping("/categorys")
 public class CategoryController {
 
     @GetMapping("")
