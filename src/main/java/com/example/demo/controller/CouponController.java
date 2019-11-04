@@ -67,8 +67,6 @@ public class CouponController {
 
 
 
-
-
     @PostMapping("couponRule/{couponRuleId}")
     @ApiOperation("管理员上传新的couponRule")
     public void postNewCouponRule(){
