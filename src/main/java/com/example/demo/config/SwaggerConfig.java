@@ -29,7 +29,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
         private ApiInfo buildApiInf(){
             return new ApiInfoBuilder()
                     .title("轻商城接口")
-                    .description("OO头一块钱4个")
+                    .description("wowoto! one yuan for four! hey hey!")
                     .version("1.0")
                     .build();
         }
