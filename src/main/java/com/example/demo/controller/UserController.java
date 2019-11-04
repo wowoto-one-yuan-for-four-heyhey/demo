@@ -48,7 +48,7 @@ public class UserController {
     public Address getUserAddress(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id){
         return userService.getUserAddress(id);
     }
-    @PutMapping("{id}/address/{address-id}")
+    @PutMapping("{id}/address/{addressId}")
     @ApiOperation("修改用户某个地址信息")
     public Object updateAddress(){
         return 5;
@@ -58,7 +58,7 @@ public class UserController {
     public Object createAddress(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id){
         return 5;
     }
-    @DeleteMapping("{id}/address/{id}")
+    @DeleteMapping("{id}/address/{addressId}")
     @ApiOperation("删除某个用户某个地址")
     public Object deleteAddress(){
         return 5;
@@ -80,14 +80,14 @@ public class UserController {
     public Object getAllPrints(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id){
         return 5;
     }
-    @GetMapping("{id}/footprints/{fp-id}")
+    @GetMapping("{id}/footprints/{fpId}")
     @ApiOperation("进入某个足迹")
-    public Object checkPrint(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id,@ApiParam(name="fp-id",value="足迹id",required=true) @PathVariable String fp_id){
+    public Object checkPrint(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id,@ApiParam(name="fpId",value="足迹id",required=true) @PathVariable String fp_id){
         return 5;
     }
-    @DeleteMapping("{id}/footprints/{fp-id}")
+    @DeleteMapping("{id}/footprints/{fpId}")
     @ApiOperation("删除某个足迹")
-    public Object deletePrint(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id,@ApiParam(name="fp-id",value="足迹id",required=true) @PathVariable String fp_id){
+    public Object deletePrint(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id,@ApiParam(name="fpId",value="足迹id",required=true) @PathVariable String fp_id){
         return 5;
     }
     @DeleteMapping("{id}/footprints")
@@ -101,11 +101,12 @@ public class UserController {
     public Object getCollections(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id){
         return 5;
     }
-    @PostMapping("{id}/collections/{collection-id}")
+    @PostMapping("{id}/collections/{collectionId}")
     @ApiOperation("查看单个收藏")
-    public Object checkCollection(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id,@ApiParam(name="collection-id",value="收藏id",required=true) @PathVariable String collection_id){
+    public Object checkCollection(@ApiParam(name="id",value="用户id",required=true) @PathVariable String id,@ApiParam(name="collectionId",value="收藏id",required=true) @PathVariable String collection_id){
         return 5;
     }
+
 }
 
 
