@@ -57,7 +57,7 @@ public class CategoryController {
     }
 
     @DeleteMapping("{categoryId}/subcategorys/{subCategoryId}")
-    @ApiOperation(value = "删除特定一级分类下二级分类商品详情")
+    @ApiOperation(value = "删除特定一级分类下特定二级分类商品")
     public Object deleteSubCategory(@PathVariable("id") Integer id){
         return true;
     }
