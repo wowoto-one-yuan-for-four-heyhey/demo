@@ -3,9 +3,6 @@ package com.example.demo.model;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 @ApiModel(description="用户地址address")
 public class Address {
     @ApiModelProperty(name="country",value = "国家",required = true)
@@ -49,8 +46,6 @@ public class Address {
 
     @ApiModelProperty(name="consignee",value = "收货人姓名",required = true)
     private String consignee;
-
-
 
     public Address(String country,String province,String city,String street,String telephone,String consignee) {
         this.country = country;
