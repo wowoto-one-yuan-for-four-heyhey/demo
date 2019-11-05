@@ -49,7 +49,7 @@ public class ShareController {
     @PostMapping("shareRules")
     @ApiOperation("添加分享活动规则")
     public Object addShareRules(){ return new Object(); }
-    @PutMapping("shareRules/{id}")
+    @DeleteMapping("shareRules/{id}")
     @ApiOperation("删除分享活动规则")
     public Object deleteShareRules(){ return new Object(); }
     @PutMapping("shareRules/{id}")
