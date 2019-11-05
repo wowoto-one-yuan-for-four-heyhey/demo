@@ -36,7 +36,7 @@ public class TopicController {
     @ApiOperation("删除特定专题的特定评论")
     public void deleteOneComment(){ }
 
-    @PatchMapping("{topicId}/comments/{commentId}")
-    @ApiOperation("修改特定专题的评论")
+    @PutMapping("{topicId}/comments/{commentId}")
+    @ApiOperation("修改特定专题的特定评论")
     public void updateComment(){ }
 }

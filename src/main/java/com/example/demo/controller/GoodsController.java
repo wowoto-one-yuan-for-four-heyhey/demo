@@ -41,26 +41,24 @@ public class GoodsController {
     public Object updateGoods(){ return new Object(); }
 
     /*
-     * 品牌
+     * 评论
      */
-    @GetMapping("")
-    @ApiOperation("查看所有品牌")
-    public Object getAllBrands(){return new Object();}
-    @GetMapping("{category-id}")
-    @ApiOperation("查看指定分类下的品牌")
-    public Object getBrandsByCategoryId(){return new Object();}
-    @GetMapping("{key-word}")
-    @ApiOperation("获取指定关键字下的品牌")
-    public Object getBrandsByKeyWord(){return new Object();}
-    @GetMapping("{brand-id}")
-    @ApiOperation("获取指定品牌相关信息")
-    public Object getOneBrand(){return new Object();}
+    @PostMapping("{id}/comments")
+    @ApiOperation("添加评论")
+    public Object addComment(){return new Object();}
+
+    @GetMapping("{id}/comments")
+    @ApiOperation("查看评论")
+    public Object getComment(){return new Object();}
 
     /*
-     * 品牌商品
+     * 品牌
      */
+    @GetMapping("brands/")
+    @ApiOperation("查看所有品牌")
+    public Object getAllBrands(){return new Object();}
     @GetMapping("/{brand-id}/goods")
-    @ApiOperation("获取指定品牌下的商品")
+    @ApiOperation("查看指定品牌下的商品")
     public Object getGoodsByBrandId(){return new Object();}
     @PostMapping("/{brand-id}/goods")
     @ApiOperation("添加指定品牌下的商品")
@@ -75,22 +73,16 @@ public class GoodsController {
     /*
      * 分类
      */
-    @GetMapping("")
+    @GetMapping("categories")
     @ApiOperation("查看所有分类")
     public Object getAllCategories(){return new Object();}
-    @GetMapping("{categoryId}")
-    @ApiOperation("获得特定一级分类")
-    public Object getOneCategory(){return new Object();}
 
-    /*
-     * 子分类
-     */
-    @GetMapping("{categoryId}/subcategories/{subCategoryId}")
-    @ApiOperation("获得特定一级分类下二级分类")
+    @GetMapping("categories/{categoryId}")
+    @ApiOperation("查看特定一级分类下二级分类")
     public Object getSubCategories(){return new Object();}
 
-    @GetMapping("/{subcategoryId}/goods")
-    @ApiOperation("获取指定类别下的商品")
+    @GetMapping("categories/subcategories/{subcategoryId}")
+    @ApiOperation("查看指定类别下的商品")
     public Object getGoodsBySubcategoryId(){return new Object();}
 
 

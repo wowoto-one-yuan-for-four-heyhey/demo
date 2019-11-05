@@ -81,13 +81,13 @@ public class AdminController {
     /*
      * 专题管理
      */
-    @PostMapping("")
+    @PostMapping("topics")
     @ApiOperation("添加专题")
     public void addTopic(){ }
-    @DeleteMapping("{topicId}")
+    @DeleteMapping("topics/{topicId}")
     @ApiOperation("删除专题")
     public void deleteTopic(){ }
-    @PatchMapping("{topicId}")
+    @PatchMapping("topics/{topicId}")
     @ApiOperation("修改专题信息")
     public void updateTopic(){ }
 

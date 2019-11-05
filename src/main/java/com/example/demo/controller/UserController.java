@@ -19,7 +19,7 @@ public class UserController {
      * 地址
      */
     @GetMapping("addresses")
-    @ApiOperation("获得自己的地址信息")
+    @ApiOperation("获得自己的地址")
     public Object getUserAddress(){ return new Object(); }
     @PostMapping("addresses")
     @ApiOperation("添加地址")
