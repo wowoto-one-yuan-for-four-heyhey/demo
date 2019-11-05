@@ -18,145 +18,89 @@ public class GoodsController {
     @Autowired
     GoodsService goodsService;
 
-    //商品api
+    /*
+     * 商品
+     */
     @GetMapping("")
-    @ApiOperation(value = "获得所有商品信息")
-    public Object getAllGoods(){
-        return new LitemallGoods();
-    }
-
+    @ApiOperation(value = "查看所有商品")
+    public Object getAllGoods(){ return new Object(); }
     @GetMapping("{id}")
-    @ApiOperation(value = "根据id获得某种商品的所有信息")
-    public Object getGoods(@PathVariable("id") Integer id){
-        return new LitemallGoods();
-    }
-
-    @GetMapping("search")
-    @ApiOperation(value = "根据商品名获得某种商品的所有信息")
-    public Object searchGoods(@NotNull @RequestParam String name) {
-        return new LitemallGoods();
-    }
-
+    @ApiOperation(value = "查看特定商品")
+    public Object getOneGoods(){ return new Object(); }
+    @GetMapping("{key-word}}")
+    @ApiOperation(value = "根据关键字查看商品")
+    public Object getGoodsOfKeyWord() { return new Object(); }
     @PostMapping("")
-    @ApiOperation(value = "创建新商品")
-    public Object createGoods(@RequestBody Goods goods){
-        return new LitemallGoods();
-    }
-
+    @ApiOperation(value = "添加商品")
+    public Object addGoods(){ return new Object(); }
+    @DeleteMapping("{id}")
+    @ApiOperation(value = "删除商品")
+    public Object deleteGoods(){ return new Object(); }
     @PutMapping("{id}")
     @ApiOperation(value = "修改商品信息")
-    public Object updateGoods(@PathVariable("id") Integer id,@RequestBody Goods goods){
-        return new LitemallGoods();
-    }
+    public Object updateGoods(){ return new Object(); }
 
-    @DeleteMapping("{id}")
-    @ApiOperation(value = "删除特定商品")
-    public Object deleteGoods(@PathVariable("id") Integer id){
-        return true;
-    }
-
+    /*
+     * 商品规格
+     */
     @GetMapping("{id}/specification")
-    @ApiOperation(value = "根据商品id获得某种商品的所有规格信息")
-    public Object getGoodsSpecification(@PathVariable("id") Integer id){
-        return new LitemallGoods();
-    }
-
-    @GetMapping("{id}/specification/{sId}")
-    @ApiOperation(value = "根据商品id获得某种商品的特定id的规格信息")
-    public Object getGoodsSpecification(@PathVariable("id") Integer id,@PathVariable("sId") Integer sId){
-        return new LitemallGoods();
-    }
-
-    @PostMapping("{id}/specification")
-    @ApiOperation(value = "创建商品新规格")
-    public Object createGoodsSpecification(@RequestBody Goods goods){
-        return new LitemallGoods();
-    }
-
-    @PutMapping("{id}/specification/{sId}")
+    @ApiOperation(value = "查看特定商品的的所有规格信息")
+    public Object getAllSpecificationsByGoodsId(){ return new Object(); }
+    @GetMapping("{id}/specifications/{specificationId}")
+    @ApiOperation(value = "查看特定商品的的特定规格信息")
+    public Object getOneSpecificationsByGoodsId(){ return new Object(); }
+    @PostMapping("{id}/specifications")
+    @ApiOperation(value = "添加商品规格")
+    public Object addSpecification(){ return new Object(); }
+    @DeleteMapping("{id}/specifications/{specificationId}")
+    @ApiOperation(value = "删除商品规格")
+    public Object deleteSpecification(){ return new Object(); }
+    @PutMapping("{id}/specifications/{specificationId}")
     @ApiOperation(value = "修改商品规格信息")
-    public Object updateGoodsSpecification(@PathVariable("id") Integer id,@RequestBody Goods goods,@PathVariable("sId") Integer sId){
-        return new LitemallGoods();
-    }
+    public Object updateSpecification(){ return new Object(); }
 
-    @DeleteMapping("{id}/specification/{sId}")
-    @ApiOperation(value = "删除特定商品规格")
-    public Object deleteGoodsSpecification(@PathVariable("id") Integer id,@PathVariable("sId") Integer sId){
-        return true;
-    }
+    /*
+     * 预售商品
+     */
+    @GetMapping("pre-sale-goods")
+    @ApiOperation(value = "查看所有预售商品")
+    public Object getAllPreSaleGoods(){ return new Object(); }
+    @GetMapping("pre-sale-goods/{id}")
+    @ApiOperation(value = "查看特定预售商品")
+    public Object getOnePreSaleGoods(){ return new Object(); }
+    @GetMapping("pre-sale-goods/{key-word}")
+    @ApiOperation(value = "根据关键字查看相关预售商品")
+    public Object getPreSaleGoodsByKeyWord() { return new Object(); }
+    @PostMapping("pre-sale-goods")
+    @ApiOperation(value = "添加预售商品")
+    public Object addPreSaleGoods(){ return new Object(); }
+    @DeleteMapping("pre-sale-goods/{id}")
+    @ApiOperation(value = "删除预售商品")
+    public Object deletePreSaleGoods(){ return new Object(); }
+    @PutMapping("pre-sale-goods/{id}")
+    @ApiOperation(value = "修改预售商品信息")
+    public Object updatePreSaleGoods(){ return new Object(); }
 
-
-    //预售商品api
-    @GetMapping("pre-sale")
-    @ApiOperation(value = "获得所有预售商品信息")
-    public Object getAllPreSaleGoods(){
-        return new LitemallGoods();
-    }
-
-    @GetMapping("pre-sale/{id}")
-    @ApiOperation(value = "根据id获得某种预售商品的所有信息")
-    public Object getPreSaleGoods(@PathVariable("id") Integer id){
-        return new LitemallGoods();
-    }
-
-    @GetMapping("pre-sale/{name}")
-    @ApiOperation(value = "根据商品名获得某种预售商品的所有信息")
-    public Object searchPreSaleGoods(@PathVariable("name") String name) {
-        return new LitemallGoods();
-    }
-
-    @PostMapping("pre-sale")
-    @ApiOperation(value = "创建新预售商品")
-    public Object createPreSaleGoods(@RequestBody Goods goods){
-        return new LitemallGoods();
-    }
-
-    @PutMapping("pre-sale/{id}")
-    @ApiOperation(value = "修改特定预售商品信息")
-    public Object updatePreSaleGoods(@PathVariable("id") Integer id,@RequestBody Goods goods){
-        return new LitemallGoods();
-    }
-
-    @DeleteMapping("pre-sale/{id}")
-    @ApiOperation(value = "删除特定预售商品")
-    public Object deletePreSaleGoods(@PathVariable("id") Integer id){
-        return true;
-    }
-
-    //团购商品api
+    /*
+     * 团购商品
+     */
     @GetMapping("groupon-goods")
-    @ApiOperation(value = "获得所有团购商品信息")
-    public Object getAllGrouponGoods(){
-        return new LitemallGoods();
-    }
-
+    @ApiOperation(value = "查看所有团购商品")
+    public Object getAllGrouponGoods(){ return new Object(); }
     @GetMapping("groupon-goods/{id}")
-    @ApiOperation(value = "根据id获得某种团购商品的所有信息")
-    public Object getGrouponGoods(@PathVariable("id") Integer id){
-        return new LitemallGoods();
-    }
-
-    @GetMapping("groupon-goods/search")
-    @ApiOperation(value = "根据商品名获得某种团购商品的所有信息")
-    public Object searchGrouponGoods(@NotNull @RequestParam String name) {
-        return new LitemallGoods();
-    }
-
+    @ApiOperation(value = "查看特定团购商品")
+    public Object getGrouponGoods(){ return new Object(); }
+    @GetMapping("groupon-goods/{key-word}}")
+    @ApiOperation(value = "根据关键字查看相关团购商品")
+    public Object getGrouponGoodsByKeyWord() { return new Object(); }
     @PostMapping("groupon-goods")
-    @ApiOperation(value = "创建新团购商品")
-    public Object createGrouponGoods(@RequestBody Goods goods){
-        return new LitemallGoods();
-    }
-
+    @ApiOperation(value = "添加团购商品")
+    public Object addGrouponGoods(){ return new Object(); }
+    @DeleteMapping("groupon-goods/{id}")
+    @ApiOperation(value = "删除团购商品")
+    public Object deleteGrouponGoods(){ return new Object(); }
     @PutMapping("groupon-goods/{id}")
     @ApiOperation(value = "修改团购商品信息")
-    public Object updateGrouponGoods(@PathVariable("id") Integer id,@RequestBody Goods goods){
-        return new LitemallGoods();
-    }
+    public Object updateGrouponGoods(){ return new Object(); }
 
-    @DeleteMapping("groupon-goods/{id}")
-    @ApiOperation(value = "删除特定团购商品")
-    public Object deleteGrouponGoods(@PathVariable("id") Integer id){
-        return true;
-    }
 }

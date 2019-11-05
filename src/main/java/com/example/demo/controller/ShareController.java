@@ -12,60 +12,48 @@ import javax.validation.constraints.NotNull;
 @RestController
 @RequestMapping("/shares")
 public class ShareController {
+
+    /*
+     * 分享活动
+     */
     @GetMapping("")
-    @ApiOperation(value = "获得所有分享活动信息")
-    public Object getAllShares(){
-        return "分享活动信息";
-    }
-
-    @GetMapping("users/{userId}")
-    @ApiOperation(value = "根据userId获得该用户所有分享活动的信息")
-    public Object getSharesByUser(@PathVariable("userId") Integer userId){
-        return "分享活动信息";
-    }
-
+    @ApiOperation("查看所有分享活动")
+    public Object getAllShares(){ return new Object(); }
     @GetMapping("{id}")
-    @ApiOperation(value = "根据shareId获得某个分享活动的信息")
-    public Object getSharesById(@PathVariable("id") Integer id) { return "分享活动信息"; }
-
+    @ApiOperation("查看特定分享活动")
+    public Object getOneShare() { return new Object(); }
+    @GetMapping("users/{userId}")
+    @ApiOperation("查看特定用户所有分享活动")
+    public Object getSharesByUser(){ return new Object(); }
     @PostMapping("")
-    @ApiOperation(value = "创建新分享活动")
-    public Object createShares(){
-        return "分享活动信息";
-    }
-
+    @ApiOperation("添加分享活动")
+    public Object addShare(){ return new Object(); }
     @PutMapping("{id}")
-    @ApiOperation(value = "修改分享活动信息")
+    @ApiOperation("修改分享活动信息")
     public Object updateShares(@PathVariable("id") Integer id){
-        return "分享活动信息";
+        return new Object();
     }
 
-    @GetMapping("rules")
-    @ApiOperation(value = "获得所有分享活动规则信息")
-    public Object getAllRules(){
-        return "分享活动信息";
-    }
-
-    @GetMapping("{id}/rules")
-    @ApiOperation(value = "获得特定分享活动规则信息")
-    public Object getRulesById(@PathVariable("id") Integer id){
-        return "分享活动规则信息";
-    }
-
-    @GetMapping("rules/{goodsId}")
-    @ApiOperation(value = "根据商品id获得某个商品支持的分享活动规则信息")
-    public Object getRulesByGoods(@PathVariable("goodsId") Integer id) { return "分享活动规则信息"; }
-
-    @PostMapping("rules")
-    @ApiOperation(value = "创建新分享活动规则信息")
-    public Object createRules(){
-        return "分享活动规则信息";
-    }
-
-    @PutMapping("rules/{id}")
-    @ApiOperation(value = "修改分享活动规则信息")
-    public Object updateRules(@PathVariable("id") Integer id){
-        return "分享活动规则信息";
-    }
+    /*
+     * 分享规则
+     */
+    @GetMapping("shareRules")
+    @ApiOperation("查看所有分享活动规则")
+    public Object getAllShareRules(){ return new Object(); }
+    @GetMapping("{id}/shareRules")
+    @ApiOperation("查看特定分享活动规则")
+    public Object getOneShareRule(){ return new Object(); }
+    @GetMapping("{goodsId}/shareRules")
+    @ApiOperation("查看特定商品支持的分享活动规则")
+    public Object getShareRulesByGoodsId() { return new Object(); }
+    @PostMapping("shareRules")
+    @ApiOperation("添加分享活动规则")
+    public Object addShareRules(){ return new Object(); }
+    @PutMapping("shareRules/{id}")
+    @ApiOperation("删除分享活动规则")
+    public Object deleteShareRules(){ return new Object(); }
+    @PutMapping("shareRules/{id}")
+    @ApiOperation("修改分享活动规则信息")
+    public Object updateShareRules(@PathVariable("id") Integer id){ return new Object(); }
 
 }
