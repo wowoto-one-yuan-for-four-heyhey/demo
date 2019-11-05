@@ -41,6 +41,60 @@ public class GoodsController {
     public Object updateGoods(){ return new Object(); }
 
     /*
+     * 品牌
+     */
+    @GetMapping("")
+    @ApiOperation("查看所有品牌")
+    public Object getAllBrands(){return new Object();}
+    @GetMapping("{category-id}")
+    @ApiOperation("查看指定分类下的品牌")
+    public Object getBrandsByCategoryId(){return new Object();}
+    @GetMapping("{key-word}")
+    @ApiOperation("获取指定关键字下的品牌")
+    public Object getBrandsByKeyWord(){return new Object();}
+    @GetMapping("{brand-id}")
+    @ApiOperation("获取指定品牌相关信息")
+    public Object getOneBrand(){return new Object();}
+
+    /*
+     * 品牌商品
+     */
+    @GetMapping("/{brand-id}/goods")
+    @ApiOperation("获取指定品牌下的商品")
+    public Object getGoodsByBrandId(){return new Object();}
+    @PostMapping("/{brand-id}/goods")
+    @ApiOperation("添加指定品牌下的商品")
+    public Object addGoodsOfSpecifiedBrand(){return new Object();}
+    @DeleteMapping("/{brand-id}/goods")
+    @ApiOperation("删除指定品牌下的商品")
+    public Object deleteGoodsOfSpecifiedBrand(){return new Object();}
+    @PutMapping("/{brand-id}/goods")
+    @ApiOperation("修改指定品牌下的商品信息")
+    public Object updateGoodsOfSpecifiedBrand(){return new Object();}
+
+    /*
+     * 分类
+     */
+    @GetMapping("")
+    @ApiOperation("查看所有分类")
+    public Object getAllCategories(){return new Object();}
+    @GetMapping("{categoryId}")
+    @ApiOperation("获得特定一级分类")
+    public Object getOneCategory(){return new Object();}
+
+    /*
+     * 子分类
+     */
+    @GetMapping("{categoryId}/subcategories/{subCategoryId}")
+    @ApiOperation("获得特定一级分类下二级分类")
+    public Object getSubCategories(){return new Object();}
+
+    @GetMapping("/{subcategoryId}/goods")
+    @ApiOperation("获取指定类别下的商品")
+    public Object getGoodsBySubcategoryId(){return new Object();}
+
+
+    /*
      * 商品规格
      */
     @GetMapping("{id}/specification")
@@ -49,15 +103,6 @@ public class GoodsController {
     @GetMapping("{id}/specifications/{specificationId}")
     @ApiOperation(value = "查看特定商品的的特定规格信息")
     public Object getOneSpecificationsByGoodsId(){ return new Object(); }
-    @PostMapping("{id}/specifications")
-    @ApiOperation(value = "添加商品规格")
-    public Object addSpecification(){ return new Object(); }
-    @DeleteMapping("{id}/specifications/{specificationId}")
-    @ApiOperation(value = "删除商品规格")
-    public Object deleteSpecification(){ return new Object(); }
-    @PutMapping("{id}/specifications/{specificationId}")
-    @ApiOperation(value = "修改商品规格信息")
-    public Object updateSpecification(){ return new Object(); }
 
     /*
      * 预售商品
