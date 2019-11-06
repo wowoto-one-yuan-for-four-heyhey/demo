@@ -30,7 +30,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
             return new ApiInfoBuilder()
                     .title("轻商城接口")
                     .description("wowoto! one yuan for four! hey hey!")
-                    .version("1.0")
+                    .version("2.0")
                     .build();
         }
     }
