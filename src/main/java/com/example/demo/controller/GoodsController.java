@@ -26,7 +26,7 @@ public class GoodsController {
     @GetMapping("goods/{id}")
     @ApiOperation(value = "查看特定商品")
     public Object getOneGoods(){ return new Object(); }
-    @GetMapping("goods/{key-word}}")
+    @GetMapping("goods/search")
     @ApiOperation(value = "根据关键字查看商品")
     public Object getGoodsOfKeyWord() { return new Object(); }
 
@@ -89,7 +89,7 @@ public class GoodsController {
     @GetMapping("pre-sale-goods/{id}")
     @ApiOperation(value = "查看特定预售商品")
     public Object getOnePreSaleGoods(){ return new Object(); }
-    @GetMapping("pre-sale-goods/{key-word}")
+    @GetMapping("pre-sale-goods/search")
     @ApiOperation(value = "根据关键字查看相关预售商品")
     public Object getPreSaleGoodsByKeyWord() { return new Object(); }
 
@@ -103,7 +103,7 @@ public class GoodsController {
     @GetMapping("groupon-goods/{id}")
     @ApiOperation(value = "查看特定团购商品")
     public Object getGrouponGoods(){ return new Object(); }
-    @GetMapping("groupon-goods/{key-word}}")
+    @GetMapping("groupon-goods/search")
     @ApiOperation(value = "根据关键字查看相关团购商品")
     public Object getGrouponGoodsByKeyWord() { return new Object(); }
 

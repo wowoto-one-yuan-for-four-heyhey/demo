@@ -96,10 +96,10 @@ public class UserController {
     @GetMapping("shares/{id}")
     @ApiOperation("查看特定分享活动")
     public Object getOneShare() { return new Object(); }
-    @PostMapping("shares/{goodsId}")
+    @PostMapping("shares/creation/{goodsId}")
     @ApiOperation("新建分享活动")
     public Object addShare(){ return new Object(); }
-    @PostMapping("shares/{shareId}")
+    @PostMapping("shares/participation/{shareId}")
     @ApiOperation("参与分享活动")
     public Object participantShare(){ return new Object(); }
 }
