@@ -21,7 +21,7 @@ public class OrderController {
     @ApiOperation("查看特定订单的订单详情")
     public Object getOrderDetail(){return new Object();}
 
-    @DeleteMapping("{orderId}")
+    @DeleteMapping("order/{orderId}")
     @ApiOperation("删除订单")
     public Object deleteOrder(){return new Object();}
 

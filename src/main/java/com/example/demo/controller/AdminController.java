@@ -76,7 +76,7 @@ public class AdminController {
     @DeleteMapping("topics/{topicId}")
     @ApiOperation("删除专题")
     public void deleteTopic(){ }
-    @PutMapping("topics/{topicId}")
+    @PatchMapping("topics/{topicId}")
     @ApiOperation("修改专题信息")
     public void updateTopic(){ }
 
@@ -115,9 +115,48 @@ public class AdminController {
     @ApiOperation("修改分享活动规则信息")
     public Object updateShareRules(@PathVariable("id") Integer id){ return new Object(); }
 
+    /*
+     * 商品管理
+     */
+    @PostMapping("{id}/specifications")
+    @ApiOperation(value = "添加商品规格")
+    public Object addSpecification(){ return new Object(); }
+    @DeleteMapping("{id}/specifications/{specificationId}")
+    @ApiOperation(value = "删除商品规格")
+    public Object deleteSpecification(){ return new Object(); }
+    @PutMapping("{id}/specifications/{specificationId}")
+    @ApiOperation(value = "修改商品规格信息")
+    public Object updateSpecification(){ return new Object(); }
+    @PostMapping("pre-sale-goods")
+    @ApiOperation(value = "添加预售商品")
+    public Object addPreSaleGoods(){ return new Object(); }
+    @DeleteMapping("pre-sale-goods/{id}")
+    @ApiOperation(value = "删除预售商品")
+    public Object deletePreSaleGoods(){ return new Object(); }
+    @PutMapping("pre-sale-goods/{id}")
+    @ApiOperation(value = "修改预售商品信息")
+    public Object updatePreSaleGoods(){ return new Object(); }
+    @PostMapping("groupon-goods")
+    @ApiOperation(value = "添加团购商品")
+    public Object addGrouponGoods(){ return new Object(); }
+    @DeleteMapping("groupon-goods/{id}")
+    @ApiOperation(value = "删除团购商品")
+    public Object deleteGrouponGoods(){ return new Object(); }
+    @PutMapping("groupon-goods/{id}")
+    @ApiOperation(value = "修改团购商品信息")
+    public Object updateGrouponGoods(){ return new Object(); }
 
+    /*
+     * 品牌管理
+     */
+    @PostMapping("/{brand-id}/goods")
+    @ApiOperation("添加指定品牌下的商品")
+    public Object addGoodsOfSpecifiedBrand(){return new Object();}
+    @DeleteMapping("/{brand-id}/goods")
+    @ApiOperation("删除指定品牌下的商品")
+    public Object deleteGoodsOfSpecifiedBrand(){return new Object();}
+    @PutMapping("/{brand-id}/goods")
+    @ApiOperation("修改指定品牌下的商品信息")
+    public Object updateGoodsOfSpecifiedBrand(){return new Object();}
 
-    @GetMapping("orders/{userId}")
-    @ApiOperation("查看特定用户的全部订单")    // 查看各类订单
-    public Object getUserOrders(){return new Object();}
 }
