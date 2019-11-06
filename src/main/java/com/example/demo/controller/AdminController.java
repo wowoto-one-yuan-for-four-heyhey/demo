@@ -114,4 +114,10 @@ public class AdminController {
     @PutMapping("shareRules/{id}")
     @ApiOperation("修改分享活动规则信息")
     public Object updateShareRules(@PathVariable("id") Integer id){ return new Object(); }
+
+
+
+    @GetMapping("orders/{userId}")
+    @ApiOperation("查看特定用户的全部订单")    // 查看各类订单
+    public Object getUserOrders(){return new Object();}
 }

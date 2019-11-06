@@ -6,21 +6,18 @@ import org.springframework.web.bind.annotation.*;
 
 @Api(value="用户controller",tags={"订单操作接口"})
 @RestController
-@RequestMapping("/order")
+@RequestMapping("")
 public class OrderController {
 
     /*
      * 订单
      */
-    @GetMapping("")
-    @ApiOperation("查看所有用户的全部订单")
+    @GetMapping("orders")
+    @ApiOperation("查看用户的全部订单")
     public Object getOrders(){return new Object();}
 
-    @GetMapping("{userId}")
-    @ApiOperation("查看特定用户的全部订单")    // 查看各类订单
-    public Object getUserOrders(){return new Object();}
 
-    @GetMapping("{orderId}")
+    @GetMapping("orders/{orderId}")
     @ApiOperation("查看特定订单的订单详情")
     public Object getOrderDetail(){return new Object();}
 
@@ -31,23 +28,23 @@ public class OrderController {
     /*
      * 状态
      */
-    @PostMapping("")
+    @PostMapping("orders")
     @ApiOperation("添加订单")
     public Object addOrder(){return new Object();}
 
-    @PostMapping("{orderId}/payment")
+    @PostMapping("orders/{orderId}/payment")
     @ApiOperation("支付订单")
     public Object payOrder(){return new Object();}
 
-    @PostMapping("{orderId}/confirmation")
+    @PostMapping("orders/{orderId}/confirmation")
     @ApiOperation("确认收货订单")
     public Object confirmOrder(){return new Object();}
 
-    @PostMapping("{orderId}/cancellation")
+    @PostMapping("orders/{orderId}/cancellation")
     @ApiOperation("取消订单")
     public Object cancelOrder(){return new Object();}
 
-    @PostMapping("{orderId}/customerService")
+    @PostMapping("orders/{orderId}/customerService")
     @ApiOperation("订单售后服务")
     public Object customerServiceOrder(){return new Object();}
 
