@@ -65,18 +65,7 @@ public class AdminController {
     @ApiOperation(value = "修改特定一级分类下二级分类")
     public Object updateSubCategory(@PathVariable("id") Integer id, @RequestBody Goods goods){ return new Object(); }
 
-    /*
-     * 商品管理
-     */
-    @PostMapping("goods/{id}/specifications")
-    @ApiOperation(value = "添加商品规格")
-    public Object addSpecification(){ return new Object(); }
-    @DeleteMapping("goods/{id}/specifications/{specificationId}")
-    @ApiOperation(value = "删除商品规格")
-    public Object deleteSpecification(){ return new Object(); }
-    @PutMapping("goods/{id}/specifications/{specificationId}")
-    @ApiOperation(value = "修改商品规格信息")
-    public Object updateSpecification(){ return new Object(); }
+
 
     /*
      * 专题管理
