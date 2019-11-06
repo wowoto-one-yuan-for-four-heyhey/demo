@@ -118,6 +118,15 @@ public class AdminController {
     /*
      * 商品管理
      */
+    @PostMapping("goods")
+    @ApiOperation(value = "添加商品")
+    public Object addGoods(){ return new Object(); }
+    @DeleteMapping("goods/{id}")
+    @ApiOperation(value = "删除商品")
+    public Object deleteGoods(){ return new Object(); }
+    @PutMapping("goods/{id}")
+    @ApiOperation(value = "修改商品信息")
+    public Object updateGoods(){ return new Object(); }
     @PostMapping("{id}/specifications")
     @ApiOperation(value = "添加商品规格")
     public Object addSpecification(){ return new Object(); }

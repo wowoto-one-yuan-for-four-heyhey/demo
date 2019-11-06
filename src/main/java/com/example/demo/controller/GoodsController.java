@@ -29,15 +29,7 @@ public class GoodsController {
     @GetMapping("goods/{key-word}}")
     @ApiOperation(value = "根据关键字查看商品")
     public Object getGoodsOfKeyWord() { return new Object(); }
-    @PostMapping("goods")
-    @ApiOperation(value = "添加商品")
-    public Object addGoods(){ return new Object(); }
-    @DeleteMapping("goods/{id}")
-    @ApiOperation(value = "删除商品")
-    public Object deleteGoods(){ return new Object(); }
-    @PutMapping("goods/{id}")
-    @ApiOperation(value = "修改商品信息")
-    public Object updateGoods(){ return new Object(); }
+
 
     /*
      * 评论
@@ -69,11 +61,11 @@ public class GoodsController {
     @ApiOperation("查看所有分类")
     public Object getAllCategories(){return new Object();}
 
-    @GetMapping("categories/subcategories")
+    @GetMapping("categories/{categoryId}/subcategories")
     @ApiOperation("查看特定一级分类下二级分类")
     public Object getSubCategories(){return new Object();}
 
-    @GetMapping("categories/subcategories/{subcategoryId}/goods")
+    @GetMapping("categories/{categoryId}/subcategories/{subcategoryId}/goods")
     @ApiOperation("查看指定类别下的商品")
     public Object getGoodsBySubcategoryId(){return new Object();}
 
