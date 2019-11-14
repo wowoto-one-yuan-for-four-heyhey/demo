@@ -22,12 +22,12 @@ public class UserController {
     @PostMapping("addresses")
     @ApiOperation("添加地址")
     public Object createAddress(@ApiParam(name="address",value="地址",required=true)Object address) { return new Object(); }
-    @DeleteMapping("addresses/{addressId}")
+    @DeleteMapping("addresses/{id}")
     @ApiOperation("删除地址")
-    public boolean deleteAddress(@ApiParam(name="addressId",value="地址ID",required=true) @PathVariable("addressId") String addressId){ return true; }
-    @PutMapping("address/{addressId}")
+    public boolean deleteAddress(@ApiParam(name="id",value="地址ID",required=true) @PathVariable("id") String id){ return true; }
+    @PutMapping("address/{id}")
     @ApiOperation("修改地址信息")
-    public Object updateAddress(@ApiParam(name="addressId",value="地址ID",required=true) @PathVariable("addressId") String addressId,@ApiParam(name="newAddress",value="新地址",required=true) String newAddress){ return new Object(); }
+    public Object updateAddress(@ApiParam(name="id",value="地址ID",required=true) @PathVariable("id") String id,@ApiParam(name="newAddress",value="新地址",required=true) String newAddress){ return new Object(); }
 
     /*
      * 收藏
@@ -35,12 +35,12 @@ public class UserController {
     @GetMapping("collections")
     @ApiOperation("查看所有收藏")
     public ArrayList<Object> getCollections(){ return new ArrayList<Object>(); }
-    @PostMapping("collections/{goodsId}")
+    @PostMapping("collections/{id}")
     @ApiOperation("添加收藏")
-    public Object addCollections(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
-    @DeleteMapping("collections/{collectionId}")    // collectionId <-> goodId
+    public Object addCollections(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
+    @DeleteMapping("collections/{id}")    // collectionId <-> goodId
     @ApiOperation("删除收藏")
-    public boolean deleteCollection(@ApiParam(name="collectionId",value="收藏ID",required=true) @PathVariable("collectionId") String collectionId){ return true; }
+    public boolean deleteCollection(@ApiParam(name="id",value="收藏ID",required=true) @PathVariable("id") String id){ return true; }
 
     /*
      * 足迹
@@ -48,12 +48,12 @@ public class UserController {
     @GetMapping("footprints")
     @ApiOperation("获得特定用户的足迹")
     public ArrayList<Object> getPrints(){ return new ArrayList<Object>(); }
-    @PostMapping("footprints/{goodsId}")
+    @PostMapping("footprints/{id}")
     @ApiOperation("添加足迹")
-    public Object addPrint(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
-    @DeleteMapping("footprints/{fpId}")
+    public Object addPrint(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
+    @DeleteMapping("footprints/{id}")
     @ApiOperation("删除特定足迹")
-    public boolean deletePrint(@ApiParam(name="fpId",value="足迹ID",required=true) @PathVariable("fpId") String fpId){ return true; }
+    public boolean deletePrint(@ApiParam(name="id",value="足迹ID",required=true) @PathVariable("id") String id){ return true; }
     @DeleteMapping("footprints")
     @ApiOperation("删除所有足迹")
     public boolean deletePrints(){ return true;}
@@ -64,12 +64,12 @@ public class UserController {
     @GetMapping("cart-items")
     @ApiOperation("查看购物车")
     public ArrayList<Object> getCartItems(){ return new ArrayList<Object>(); }
-    @PostMapping("cart-items/{goodsId}")
+    @PostMapping("cart-items/{id}")
     @ApiOperation("加入购物车")
-    public Object addItem(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
-    @DeleteMapping("cart-items/{cartItemId}")
+    public Object addItem(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
+    @DeleteMapping("cart-items/{id}")
     @ApiOperation("删除购物车中特定物品")
-    public boolean getCartItem(@ApiParam(name="cartItemId",value="购物车项ID",required=true) @PathVariable("cartItemId") String cartItemId){ return true;}
+    public boolean getCartItem(@ApiParam(name="id",value="购物车项ID",required=true) @PathVariable("id") String id){ return true;}
 
 
     /*
@@ -78,9 +78,9 @@ public class UserController {
     @GetMapping("coupons")
     @ApiOperation("查看所有优惠券")
     public ArrayList<Object> getAllCouponsInfo(){ return new ArrayList<Object>(); }
-    @GetMapping("coupons/{couponId}")
+    @GetMapping("coupons/{id}")
     @ApiOperation("查看特定优惠券信息")
-    public Object getOneCouponInfo(@ApiParam(name="couponId",value="优惠券id",required=true) @PathVariable("couponId") String couponId){ return new Object(); }
+    public Object getOneCouponInfo(@ApiParam(name="id",value="优惠券id",required=true) @PathVariable("id") String id){ return new Object(); }
     @PostMapping("coupons")
     @ApiOperation("领取优惠券")
     public Object addCoupon(@ApiParam(name="coupon",value="优惠券",required=true)Object coupon){ return new Object(); }
@@ -93,13 +93,13 @@ public class UserController {
     public ArrayList<Object> getAllShares(){ return new ArrayList<Object>(); }
     @GetMapping("shares/{id}")
     @ApiOperation("查看特定分享活动")
-    public Object getOneShare(@ApiParam(name="sharesId",value="分享活动id",required=true)@PathVariable("sharesId")String sharesId) { return new Object(); }
-    @PostMapping("shares/creation/{goodsId}")
+    public Object getOneShare(@ApiParam(name="id",value="分享活动id",required=true)@PathVariable("id")String id) { return new Object(); }
+    @PostMapping("shares/{id}/creation")
     @ApiOperation("新建分享活动")
-    public Object addShare(){ return new Object(); }
-    @PostMapping("shares/participation/{shareId}")
+    public Object addShare(@ApiParam(name="id",value="商品id",required=true)@PathVariable("id")String id){ return new Object(); }
+    @PostMapping("shares/{id}/participation")
     @ApiOperation("参与分享活动")
-    public Object participantShare(){ return new Object(); }
+    public Object participantShare(@ApiParam(name="id",value="分享id",required=true)@PathVariable("id")String id){ return new Object(); }
 
 
     /*
@@ -107,9 +107,9 @@ public class UserController {
      */
 
 
-    @GetMapping("categories/{categoryId}/subcategories/{subcategoryId}/goods")
+    @GetMapping("categories/{id}/goods")
     @ApiOperation("查看指定类别下的商品")
-    public Object getGoodsBySubcategoryId(){return new Object();}
+    public ArrayList<Object> getGoodsBySubcategoryId(@ApiParam(name="id",value="类别id",required=true)@PathVariable("id")String id){return new ArrayList<Object>();}
 
 
     /*
@@ -132,42 +132,42 @@ public class UserController {
      */
     @GetMapping("orders")
     @ApiOperation("查看用户的全部订单")
-    public Object getOrders(){return new Object();}
+    public ArrayList<Object> getOrders(){return new ArrayList<Object>();}
 
-    @GetMapping("orders/{orderId}")
+    @GetMapping("orders/{id}")
     @ApiOperation("查看特定订单的订单详情")
-    public Object getOrderDetail(){return new Object();}
+    public Object getOrderDetail(@ApiParam(name="id",value="订单id",required=true)@PathVariable("id")String id){return new Object();}
 
     /*
      * 状态
      */
     @PostMapping("orders")
     @ApiOperation("发起订单")
-    public Object addOrder(){return new Object();}
+    public Object addOrder(@ApiParam(name="order",value="新订单",required=true)Object newObject){return new Object();}
 
-    @PostMapping("orders/{orderId}/payment")
+    @PostMapping("orders/{id}/payment")
     @ApiOperation("支付订单")
-    public Object payOrder(){return new Object();}
+    public Object payOrder(@ApiParam(name="id",value="订单id",required=true)@PathVariable("id")String id){return new Object();}
 
-    @PostMapping("orders/{orderId}/confirmation")
+    @PostMapping("orders/{id}/confirmation")
     @ApiOperation("确认收货订单")
-    public Object confirmOrder(){return new Object();}
+    public Object confirmOrder(@ApiParam(name="id",value="订单id",required=true)@PathVariable("id")String id){return new Object();}
 
-    @PostMapping("orders/{orderId}/cancellation")
+    @PostMapping("orders/{id}/cancellation")
     @ApiOperation("取消订单")
-    public Object cancelOrder(){return new Object();}
+    public Object cancelOrder(@ApiParam(name="id",value="订单id",required=true)@PathVariable("id")String id){return new Object();}
 
-    @PostMapping("orders/{orderId}/customerService")
+    @PostMapping("orders/{id}/customerService")
     @ApiOperation("发起一项订单售后服务")
-    public Object addOrderCustomerService(){return new Object();}
+    public Object addOrderCustomerService(@ApiParam(name="id",value="订单id",required=true)@PathVariable("id")String id){return new Object();}
 
-    @GetMapping("orders/{orderId}/customerService")
+    @GetMapping("orders/{id}/customerService")
     @ApiOperation("查看订单下的对应售后服务")
-    public Object getOrderCustomerService(){return new Object();}
+    public Object getOrderCustomerService(@ApiParam(name="id",value="订单id",required=true)@PathVariable("id")String id){return new Object();}
 
-    @PostMapping("orders/{orderId}/customerService/{customerServiceId}")
-    @ApiOperation("发起一项订单售后服务")
-    public Object updateOrderCustomerService(){return new Object();}
+    @PutMapping("orders/{orderId}/customerService/{customerServiceId}")
+    @ApiOperation("推进一项订单售后服务")
+    public Object updateOrderCustomerService(@ApiParam(name="orderId",value="订单id",required=true)@PathVariable("orderId")String orderId,@ApiParam(name="customerServiceId",value="售后id",required=true)@PathVariable("customerServiceId")String customerServiceId){return new Object();}
 
     /*
      * 评论
@@ -175,27 +175,29 @@ public class UserController {
 
     @PostMapping("goods/{id}/comments")
     @ApiOperation("添加评论")
-    public Object addComment(){return new Object();}
+    public Object addComment(@ApiParam(name="id",value="商品id",required=true)@PathVariable("id")String id){return new Object();}
 
     @GetMapping("goods/{id}/comments")
     @ApiOperation("查看评论")
-    public Object getComment(){return new Object();}
+    public ArrayList<Object> getComment(@ApiParam(name="id",value="商品id",required=true)@PathVariable("id")String id){return new ArrayList<Object>();}
 
-    @GetMapping("topics/{topicId}/comments")
+    @GetMapping("topics/{id}/comments")
     @ApiOperation("查看特定专题的评论")
-    public void getCommentsByTopicId(){ }
+    public ArrayList<Object> getCommentsByTopicId(@ApiParam(name="id",value="话题id",required=true)@PathVariable("id")String id){ return new ArrayList<Object>(); }
 
-    @PostMapping("topics/{topicId}/comments")
+    @PostMapping("topics/{id}/comments")
     @ApiOperation("添加特定专题的评论")
-    public void addTopicComment(){ }
+    public Object addTopicComment(@ApiParam(name="id",value="话题id",required=true)@PathVariable("id")String id){ return new Object(); }
 
     @DeleteMapping("topics/{topicId}/comments/{commentId}")
     @ApiOperation("删除特定专题的特定评论")
-    public void deleteOneComment(){ }
+    public boolean deleteOneComment(@ApiParam(name="topicId",value="话题id",required=true)@PathVariable("topicId")String topicId,
+                                    @ApiParam(name="commentId",value="话题id",required=true)@PathVariable("commentId")String commentId){ return true; }
 
     @PutMapping("topics/{topicId}/comments/{commentId}")
     @ApiOperation("修改特定专题的特定评论")
-    public void updateComment(){ }
+    public Object updateComment(@ApiParam(name="topicId",value="话题id",required=true)@PathVariable("topicId")String topicId,
+                                @ApiParam(name="commentId",value="话题id",required=true)@PathVariable("commentId")String commentId){ return new Object();}
 }
 
 
