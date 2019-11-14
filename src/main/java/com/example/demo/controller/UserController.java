@@ -1,11 +1,7 @@
 package com.example.demo.controller;
 
-
-import com.example.demo.model.Address;
-import com.example.demo.service.UserService;
 import io.swagger.annotations.*;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -101,10 +97,6 @@ public class UserController {
     @PostMapping("shares/participation/{shareId}")
     @ApiOperation("参与分享活动")
     public Object participantShare(){ return new Object(); }
-
-
-
-
 
 
     /*

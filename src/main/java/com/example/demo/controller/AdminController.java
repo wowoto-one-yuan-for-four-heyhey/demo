@@ -9,6 +9,10 @@ public class AdminController {
     /*
      * @brand
      */
+    @PostMapping("brands/search")
+    @ApiOperation("搜索品牌")
+    public Object searchBrand(){return new Object();}
+
     @PostMapping("brands")
     @ApiOperation("添加品牌")
     public Object addBrand(){return new Object();}
@@ -26,47 +30,39 @@ public class AdminController {
      * @category
      */
     @PostMapping("categories")
-    @ApiOperation(value = "添加一级分类")
+    @ApiOperation(value = "添加分类")
     public Object addCategory(){ return new Object(); }
 
     @DeleteMapping("categories/{categoryId}")
-    @ApiOperation(value = "删除特定一级分类")
+    @ApiOperation(value = "删除特定分类")
     public Object deleteCategory(){ return new Object(); }
 
     @PutMapping("categories/{categoryId}")
-    @ApiOperation(value = "修改特定一级分类")
+    @ApiOperation(value = "修改特定分类")
     public Object updateCategory(){ return new Object(); }
-
-    @PostMapping("categories/{categoryId}/subcategories")
-    @ApiOperation(value = "添加特定一级分类下二级分类")
-    public Object addSubCategory(){ return new Object(); }
-
-    @DeleteMapping("categories/{categoryId}/subcategories/{subCategoryId}")
-    @ApiOperation(value = "删除特定一级分类下特定二级")
-    public Object deleteSubCategory(){ return new Object(); }
-
-    @PutMapping("categories/{categoryId}/subcategories/{subCategoryId}")
-    @ApiOperation(value = "修改特定一级分类下二级分类")
-    public Object updateSubCategory(){ return new Object(); }
 
     /*
      * @coupon
      */
     @GetMapping("coupon-rules")
     @ApiOperation("查看所有优惠券规则")
-    public void getAllCouponRules(@ApiParam(name="couponId",value="优惠券id",required=true) @PathVariable String id){ return ; }
+    public void getAllCouponRules(){  }
+
+    @GetMapping("coupon-rules/search")
+    @ApiOperation("搜索优惠券规则")
+    public void searchCouponRules(){  }
 
     @PostMapping("coupon-rules")
     @ApiOperation("添加优惠券规则")
-    public void addCouponRule(){ return ; }
+    public void addCouponRule(){ }
 
     @DeleteMapping("coupon-rules/{couponRuleId}")
     @ApiOperation("删除优惠券规则")
-    public void deleteCouponRule(){ return ; }
+    public void deleteCouponRule(){ }
 
     @PutMapping("coupon-rules/{couponRuleId}")
     @ApiOperation("修改优惠券规则信息")
-    public void updateCouponRule(){ return ; }
+    public void updateCouponRule(){ }
 
 
     /*
@@ -96,6 +92,22 @@ public class AdminController {
     @ApiOperation(value = "修改商品规格信息")
     public Object updateSpecification(){ return new Object(); }
 
+    @GetMapping("goods/comments")
+    @ApiOperation(value = "查看所有商品评论")
+    public void getAllGoodsComments(){ }
+
+    @GetMapping("goods/comments/search")
+    @ApiOperation(value = "搜索商品评论")
+    public void searchGoodsComments(){ }
+
+    @PostMapping("goods/comments/{commentId}")
+    @ApiOperation(value = "回复商品评论")
+    public void replyGoodsComments(){ }
+
+    @DeleteMapping("goods/comments/{commentId}")
+    @ApiOperation(value = "删除商品评论")
+    public void deleteGoodsComments(){ }
+
     @PostMapping("pre-sale-goods")
     @ApiOperation(value = "添加预售商品")
     public Object addPreSaleGoods(){ return new Object(); }
@@ -111,15 +123,23 @@ public class AdminController {
     /*
     * 订单管理
     * */
+
     @GetMapping("orders/search")
     @ApiOperation(value = "根据用户ID、订单ID、订单状态等信息查询所有订单")
     public Object getSearchGoods(){return new Object();}
+
+    @PutMapping("orders/{orderId}")
+    @ApiOperation(value = "修改特定订单")
+    public Object updateOrder(){return new Object();}
+
+    @DeleteMapping("orders/{orderId}")
+    @ApiOperation(value = "删除特定订单")
+    public Object deleteOrder(){return new Object();}
 
 
     /*
     团购规则管理
      */
-
 
     @PostMapping("goods/{goodsId}/grouponRule")
     @ApiOperation(value = "添加团购活动")
@@ -158,6 +178,9 @@ public class AdminController {
     话题操作
     * */
 
+    @PostMapping("topics/search")
+    @ApiOperation("搜索专题")
+    public void searchTopic(){ }
 
     @PostMapping("topics")
     @ApiOperation("添加专题")
@@ -177,23 +200,48 @@ public class AdminController {
 
     @GetMapping("users")
     @ApiOperation("查看所有用户信息")
-    public Object getAllUsersInfo(){ return new Object(); }
+    public Object getAllUsersList(){ return new Object(); }
 
-    @GetMapping("user/{userId}")
+    @GetMapping("users/{userId}")
     @ApiOperation("查看特定用户信息")
-    public Object getOneUserInfo(){ return new Object(); }
+    public Object getUsersList(){ return new Object(); }
 
-    @PostMapping("user")
+    @GetMapping("users/search")
+    @ApiOperation("搜索用户信息")
+    public Object searchUsersInfo(){ return new Object(); }
+
+    @PostMapping("users")
     @ApiOperation("添加用户")
     public Object createUser(){ return new Object(); }
 
-    @DeleteMapping("user/{userId}")
+    @DeleteMapping("users/{userId}")
     @ApiOperation("删除用户")
     public Object deleteUser(){ return new Object(); }
 
-    @PutMapping("user/{userId}")
+    @PutMapping("users/{userId}")
     @ApiOperation("修改用户信息")
-    public Object updateUserInfo(){ return new Object(); }
+    public void updateUserInfo(){  }
+
+    /*
+     * 地址操作
+     * */
+    @GetMapping("address/search")
+    @ApiOperation("搜索收货地址")
+    public void searchAddress(){  }
+
+    /*
+     * 收藏操作
+     * */
+    @GetMapping("collection/search")
+    @ApiOperation("搜索会员收藏")
+    public void searchCollection(){  }
+
+    /*
+     * 足迹操作
+     * */
+    @GetMapping("footprint/search")
+    @ApiOperation("搜索会员足迹")
+    public void searchFootprint(){  }
 
     /*
     * 广告操作
@@ -202,6 +250,10 @@ public class AdminController {
     @GetMapping("ads")
     @ApiOperation("查看所有广告信息")
     public Object getAllAds(){ return new Object(); }
+
+    @GetMapping("ads/search")
+    @ApiOperation("搜索广告信息")
+    public Object searchAds(){ return new Object(); }
 
     @PostMapping("ads")
     @ApiOperation("添加广告信息")
