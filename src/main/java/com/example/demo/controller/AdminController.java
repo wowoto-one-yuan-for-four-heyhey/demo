@@ -3,7 +3,7 @@ package com.example.demo.controller;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
-
+@RequestMapping("")
 public class AdminController {
 
     /*
@@ -84,15 +84,15 @@ public class AdminController {
     @ApiOperation(value = "修改商品信息")
     public Object updateGoods(){ return new Object(); }
 
-    @PostMapping("goods/{goodsId}/specifications")
+    @PostMapping("products/")
     @ApiOperation(value = "添加商品规格")
-    public Object addSpecification(){ return new Object(); }
+    public Object addSpecification(String GoodsId){ return new Object(); }
 
-    @DeleteMapping("goods/{goodsId}/specifications/{specificationId}")
+    @DeleteMapping("products/{productId}")
     @ApiOperation(value = "删除商品规格")
     public Object deleteSpecification(){ return new Object(); }
 
-    @PutMapping("goods/{goodsId}/specifications/{specificationId}")
+    @PutMapping("products/{productId}")
     @ApiOperation(value = "修改商品规格信息")
     public Object updateSpecification(){ return new Object(); }
 
@@ -108,19 +108,22 @@ public class AdminController {
     @ApiOperation(value = "修改预售商品信息")
     public Object updatePreSaleGoods(){ return new Object(); }
 
-    @PostMapping("groupon-goods")
-    @ApiOperation(value = "添加团购商品")
-    public Object addGrouponGoods(){ return new Object(); }
-
-    @DeleteMapping("groupon-goods/{goodsId}")
-    @ApiOperation(value = "删除团购商品")
-    public Object deleteGrouponGoods(){ return new Object(); }
-
-    @PutMapping("groupon-goods/{goodsId}")
-    @ApiOperation(value = "修改团购商品信息")
-    public Object updateGrouponGoods(){ return new Object(); }
+    /*
+    团购规则管理
+     */
 
 
+    @PostMapping("goods/{goodsId}/groupon")
+    @ApiOperation(value = "添加团购活动")
+    public Object addRuleForGoods(){ return new Object(); }
+
+    @DeleteMapping("goods/{goodsId}/groupon/{grouponId}")
+    @ApiOperation(value = "删除团购活动")
+    public Object deleteRuleForGoods(){ return new Object(); }
+
+    @PutMapping("goods/{goodsId}/groupon/{grouponId}")
+    @ApiOperation(value = "修改团购活动")
+    public Object updateRuleForGoods(){ return new Object(); }
 
 
     /*
