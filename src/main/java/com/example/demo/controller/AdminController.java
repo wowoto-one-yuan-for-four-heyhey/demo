@@ -9,15 +9,15 @@ public class AdminController {
     /*
      * @brand
      */
-    @PostMapping("")
+    @PostMapping("brands")
     @ApiOperation("添加品牌")
     public Object addBrand(){return new Object();}
 
-    @DeleteMapping("{brandId}")
+    @DeleteMapping("brands/{brandId}")
     @ApiOperation("删除品牌")
     public Object deleteBrand(){return new Object();}
 
-    @PutMapping("{brandId}")
+    @PutMapping("brands/{brandId}")
     @ApiOperation("修改品牌信息")
     public Object updateBrand(){return new Object();}
 
@@ -25,27 +25,27 @@ public class AdminController {
     /*
      * @category
      */
-    @PostMapping("")
+    @PostMapping("categories")
     @ApiOperation(value = "添加一级分类")
     public Object addCategory(){ return new Object(); }
 
-    @DeleteMapping("{categoryId}")
+    @DeleteMapping("categories/{categoryId}")
     @ApiOperation(value = "删除特定一级分类")
     public Object deleteCategory(){ return new Object(); }
 
-    @PutMapping("{categoryId}")
+    @PutMapping("categories/{categoryId}")
     @ApiOperation(value = "修改特定一级分类")
     public Object updateCategory(){ return new Object(); }
 
-    @PostMapping("{categoryId}/subcategories")
+    @PostMapping("categories/{categoryId}/subcategories")
     @ApiOperation(value = "添加特定一级分类下二级分类")
     public Object addSubCategory(){ return new Object(); }
 
-    @DeleteMapping("{categoryId}/subcategories/{subCategoryId}")
+    @DeleteMapping("categories/{categoryId}/subcategories/{subCategoryId}")
     @ApiOperation(value = "删除特定一级分类下特定二级")
     public Object deleteSubCategory(){ return new Object(); }
 
-    @PutMapping("{categoryId}/subcategories/{subCategoryId}")
+    @PutMapping("categories/{categoryId}/subcategories/{subCategoryId}")
     @ApiOperation(value = "修改特定一级分类下二级分类")
     public Object updateSubCategory(){ return new Object(); }
 
@@ -146,43 +146,66 @@ public class AdminController {
     @ApiOperation("修改分享活动规则信息")
     public Object updateShareRules(@PathVariable("id") Integer id){ return new Object(); }
 
+    /*
+    话题操作
+    * */
 
 
-
-    @PostMapping("")
+    @PostMapping("topics")
     @ApiOperation("添加专题")
     public void addTopic(){ }
 
-    @DeleteMapping("{topicId}")
+    @DeleteMapping("topic/{topicId}")
     @ApiOperation("删除专题")
     public void deleteTopic(){ }
 
-    @PatchMapping("{topicId}")
+    @PatchMapping("topic/{topicId}")
     @ApiOperation("修改专题信息")
     public void updateTopic(){ }
 
+    /*
+    * 用户信息操作
+    * */
 
-    @GetMapping("")
+    @GetMapping("users")
     @ApiOperation("查看所有用户信息")
     public Object getAllUsersInfo(){ return new Object(); }
 
-    @GetMapping("/{userId}")
+    @GetMapping("user/{userId}")
     @ApiOperation("查看特定用户信息")
     public Object getOneUserInfo(){ return new Object(); }
 
-    @PostMapping("")
+    @PostMapping("user")
     @ApiOperation("添加用户")
     public Object createUser(){ return new Object(); }
 
-    @DeleteMapping("/{userId}")
+    @DeleteMapping("user/{userId}")
     @ApiOperation("删除用户")
     public Object deleteUser(){ return new Object(); }
 
-    @PutMapping("/{userId}")
+    @PutMapping("user/{userId}")
     @ApiOperation("修改用户信息")
     public Object updateUserInfo(){ return new Object(); }
 
+    /*
+    * 广告操作
+    * */
 
+    @GetMapping("ads")
+    @ApiOperation("查看所有广告信息")
+    public Object getAllAds(){ return new Object(); }
+
+    @PostMapping("ads")
+    @ApiOperation("添加广告信息")
+    public Object createAds(){ return new Object(); }
+
+    @DeleteMapping("ads/{adId}")
+    @ApiOperation("删除广告信息")
+    public Object deleteAds(){ return new Object(); }
+
+    @PutMapping("ads/{adId}")
+    @ApiOperation("修改广告信息")
+    public Object updateAds(){ return new Object(); }
 
 
 }
