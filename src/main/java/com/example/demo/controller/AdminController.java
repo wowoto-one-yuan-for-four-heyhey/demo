@@ -109,6 +109,14 @@ public class AdminController {
     public Object updatePreSaleGoods(){ return new Object(); }
 
     /*
+    * 订单管理
+    * */
+    @GetMapping("orders/search")
+    @ApiOperation(value = "根据用户ID、订单ID、订单状态等信息查询所有订单")
+    public Object getSearchGoods(){return new Object();}
+
+
+    /*
     团购规则管理
      */
 
