@@ -84,15 +84,15 @@ public class AdminController {
     @ApiOperation(value = "修改商品信息")
     public Object updateGoods(){ return new Object(); }
 
-    @PostMapping("products/")
+    @PostMapping("goods/{goodsId}/products/")
     @ApiOperation(value = "添加商品规格")
     public Object addSpecification(String GoodsId){ return new Object(); }
 
-    @DeleteMapping("products/{productId}")
+    @DeleteMapping("goods/{goodsId}/products/{productId}")
     @ApiOperation(value = "删除商品规格")
     public Object deleteSpecification(){ return new Object(); }
 
-    @PutMapping("products/{productId}")
+    @PutMapping("goods/{goodsId}/products/{productId}")
     @ApiOperation(value = "修改商品规格信息")
     public Object updateSpecification(){ return new Object(); }
 
