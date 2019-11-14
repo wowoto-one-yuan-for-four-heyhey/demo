@@ -1,16 +1,20 @@
 package com.example.demo.controller;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+@Api(value="CommonController",tags={"公用操作接口"})
 @RequestMapping("")
 public class CommonController {
 
-    @GetMapping("goods/{goodsid}/grouponRule")
+    @GetMapping("goods/{goodsId}/grouponRule")
     @ApiOperation(value = "查询特定商品上的团购规则")
-    public Object findRuleForGoods(){ return new Object(); }
+    public Object findRuleForGoods(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
 
     /*
      * 商品

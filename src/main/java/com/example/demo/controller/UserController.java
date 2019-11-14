@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
-@Api(value="用户controller",tags={"用户操作接口"})
+@Api(value="UserController",tags={"用户操作接口"})
 @RestController
 @RequestMapping("")
 public class UserController {
