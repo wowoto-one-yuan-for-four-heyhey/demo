@@ -4,6 +4,9 @@ import io.swagger.annotations.*;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 
 @Api(value="UserController",tags={"用户操作接口"})
 @RestController
@@ -15,58 +18,58 @@ public class UserController {
      */
     @GetMapping("addresses")
     @ApiOperation("获得自己的地址")
-    public Object getUserAddress(){ return new Object(); }
+    public ArrayList<Object> getUserAddress(){ return new ArrayList<Object>(); }
     @PostMapping("addresses")
     @ApiOperation("添加地址")
-    public Object createAddress() { return new Object(); }
+    public Object createAddress(@ApiParam(name="address",value="地址",required=true)Object address) { return new Object(); }
     @DeleteMapping("addresses/{addressId}")
     @ApiOperation("删除地址")
-    public Object deleteAddress(){ return new Object(); }
+    public boolean deleteAddress(@ApiParam(name="addressId",value="地址ID",required=true) @PathVariable("addressId") String addressId){ return true; }
     @PutMapping("address/{addressId}")
     @ApiOperation("修改地址信息")
-    public Object updateAddress(){ return new Object(); }
+    public Object updateAddress(@ApiParam(name="addressId",value="地址ID",required=true) @PathVariable("addressId") String addressId,@ApiParam(name="newAddress",value="新地址",required=true) String newAddress){ return new Object(); }
 
     /*
      * 收藏
      */
     @GetMapping("collections")
     @ApiOperation("查看所有收藏")
-    public Object getCollections(){ return new Object(); }
+    public ArrayList<Object> getCollections(){ return new ArrayList<Object>(); }
     @PostMapping("collections/{goodsId}")
     @ApiOperation("添加收藏")
-    public Object addCollections(){ return new Object(); }
+    public Object addCollections(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
     @DeleteMapping("collections/{collectionId}")    // collectionId <-> goodId
     @ApiOperation("删除收藏")
-    public Object deleteCollection(){ return new Object(); }
+    public boolean deleteCollection(@ApiParam(name="collectionId",value="收藏ID",required=true) @PathVariable("collectionId") String collectionId){ return true; }
 
     /*
      * 足迹
      */
     @GetMapping("footprints")
     @ApiOperation("获得特定用户的足迹")
-    public Object getPrints(){ return new Object(); }
+    public ArrayList<Object> getPrints(){ return new ArrayList<Object>(); }
     @PostMapping("footprints/{goodsId}")
     @ApiOperation("添加足迹")
-    public Object addPrint(){ return new Object(); }
+    public Object addPrint(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
     @DeleteMapping("footprints/{fpId}")
     @ApiOperation("删除特定足迹")
-    public Object deletePrint(){ return new Object(); }
+    public boolean deletePrint(@ApiParam(name="fpId",value="足迹ID",required=true) @PathVariable("fpId") String fpId){ return true; }
     @DeleteMapping("footprints")
     @ApiOperation("删除所有足迹")
-    public Object deletePrints(){ return new Object();}
+    public boolean deletePrints(){ return true;}
 
     /*
      * 购物车
      */
     @GetMapping("cart-items")
     @ApiOperation("查看购物车")
-    public Object getCartItems(){ return new Object(); }
+    public ArrayList<Object> getCartItems(){ return new ArrayList<Object>(); }
     @PostMapping("cart-items/{goodsId}")
     @ApiOperation("加入购物车")
-    public Object addItem(){ return new Object(); }
+    public Object addItem(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
     @DeleteMapping("cart-items/{cartItemId}")
     @ApiOperation("删除购物车中特定物品")
-    public Object getCartItem(){ return new Object();}
+    public boolean getCartItem(@ApiParam(name="cartItemId",value="购物车项ID",required=true) @PathVariable("cartItemId") String cartItemId){ return true;}
 
 
     /*
@@ -74,13 +77,13 @@ public class UserController {
      */
     @GetMapping("coupons")
     @ApiOperation("查看所有优惠券")
-    public void getAllCouponsInfo(){ return ; }
+    public ArrayList<Object> getAllCouponsInfo(){ return new ArrayList<Object>(); }
     @GetMapping("coupons/{couponId}")
     @ApiOperation("查看特定优惠券信息")
-    public void getOneCouponInfo(@ApiParam(name="couponId",value="优惠券id",required=true) @PathVariable String id){ return ; }
+    public Object getOneCouponInfo(@ApiParam(name="couponId",value="优惠券id",required=true) @PathVariable("couponId") String couponId){ return new Object(); }
     @PostMapping("coupons")
     @ApiOperation("领取优惠券")
-    public void addCoupon(){ return ; }
+    public Object addCoupon(@ApiParam(name="coupon",value="优惠券",required=true)Object coupon){ return new Object(); }
 
     /*
      * 分享活动
