@@ -225,6 +225,7 @@ public class AdminController {
     /*
      * 地址操作
      * */
+
     @GetMapping("address/search")
     @ApiOperation("搜索收货地址")
     public void searchAddress(){  }
@@ -232,6 +233,7 @@ public class AdminController {
     /*
      * 收藏操作
      * */
+
     @GetMapping("collection/search")
     @ApiOperation("搜索会员收藏")
     public void searchCollection(){  }
@@ -239,6 +241,7 @@ public class AdminController {
     /*
      * 足迹操作
      * */
+
     @GetMapping("footprint/search")
     @ApiOperation("搜索会员足迹")
     public void searchFootprint(){  }
@@ -267,5 +270,27 @@ public class AdminController {
     @ApiOperation("修改广告信息")
     public Object updateAds(){ return new Object(); }
 
+    /*
+     * 管理员操作
+     * */
 
+    @GetMapping("admins")
+    @ApiOperation("查看所有管理员")
+    public void getAllAdmins(){  }
+
+    @PostMapping("admins")
+    @ApiOperation("添加管理员")
+    public void addAdmin(){  }
+
+    @GetMapping("admins/{id}")
+    @ApiOperation("查看特定管理员")
+    public void getAdmin(){  }
+
+    @DeleteMapping("admins/{id}")
+    @ApiOperation("删除管理员")
+    public void deleteAdmin(){  }
+
+    @PutMapping("admins/{id}")
+    @ApiOperation("编辑管理员")
+    public void updateAdmin(){  }
 }
