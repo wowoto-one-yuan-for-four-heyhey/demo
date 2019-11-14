@@ -22,12 +22,12 @@ public class CommonController {
     @GetMapping("goods")
     @ApiOperation(value = "查看所有商品")
     public Object getAllGoods(){ return new Object(); }
-    @GetMapping("goods/{id}")
+    @GetMapping("goods/{goodsId}")
     @ApiOperation(value = "查看特定商品")
-    public Object getOneGoods(){ return new Object(); }
+    public Object getOneGoods(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
     @GetMapping("goods/search")
     @ApiOperation(value = "根据商品名称查看商品")
-    public Object getGoodsOfKeyWord() { return new Object(); }
+    public Object getGoodsOfKeyWord(@ApiParam(name="goodsName",value="商品名",required=true) String goodsName) { return new Object(); }
 
     /*
      * 品牌
@@ -35,9 +35,9 @@ public class CommonController {
     @GetMapping("brands")
     @ApiOperation("查看所有品牌")
     public Object getAllBrands(){return new Object();}
-    @GetMapping("brands/{brand-id}/goods")
+    @GetMapping("brands/{brandId}/goods")
     @ApiOperation("查看指定品牌下的商品")
-    public Object getGoodsByBrandId(){return new Object();}
+    public Object getGoodsByBrandId(@ApiParam(name="brandId",value="品牌ID",required=true) @PathVariable("brandId") String brandId){return new Object();}
 
     /*
      * 分类
@@ -48,7 +48,7 @@ public class CommonController {
 
     @GetMapping("categories/{categoryId}/subcategories")
     @ApiOperation("查看特定一级分类下二级分类")
-    public Object getSubCategories(){return new Object();}
+    public Object getSubCategories(@ApiParam(name="categoryId",value="种类ID",required=true) @PathVariable("categoryId") String categoryId){return new Object();}
 
     /*
      * 预售商品
@@ -56,9 +56,9 @@ public class CommonController {
     @GetMapping("pre-sale-goods")
     @ApiOperation(value = "查看所有预售商品")
     public Object getAllPreSaleGoods(){ return new Object(); }
-    @GetMapping("pre-sale-goods/{id}")
+    @GetMapping("pre-sale-goods/{goodsId}")
     @ApiOperation(value = "查看特定预售商品")
-    public Object getOnePreSaleGoods(){ return new Object(); }
+    public Object getOnePreSaleGoods(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
     @GetMapping("pre-sale-goods/search")
     @ApiOperation(value = "根据名称查看相关预售商品")
     public Object getPreSaleGoodsByKeyWord() { return new Object(); }
@@ -70,9 +70,9 @@ public class CommonController {
     @GetMapping("groupon-goods")
     @ApiOperation(value = "查看所有团购商品")
     public Object getAllGrouponGoods(){ return new Object(); }
-    @GetMapping("groupon-goods/{id}")
+    @GetMapping("groupon-goods/{goodId}")
     @ApiOperation(value = "查看特定团购商品")
-    public Object getGrouponGoods(){ return new Object(); }
+    public Object getGrouponGoods(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
     @GetMapping("groupon-goods/search")
     @ApiOperation(value = "根据关键字查看相关团购商品")
     public Object getGrouponGoodsByKeyWord() { return new Object(); }
