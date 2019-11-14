@@ -17,7 +17,7 @@ public class UserController {
      * 地址
      */
     @GetMapping("addresses")
-    @ApiOperation("获得自己的地址")
+    @ApiOperation("获得用户的地址")
     public ArrayList<Object> getUserAddress(){ return new ArrayList<Object>(); }
     @PostMapping("addresses")
     @ApiOperation("添加地址")
@@ -33,7 +33,7 @@ public class UserController {
      * 收藏
      */
     @GetMapping("collections")
-    @ApiOperation("查看所有收藏")
+    @ApiOperation("查看用户的所有收藏")
     public ArrayList<Object> getCollections(){ return new ArrayList<Object>(); }
     @PostMapping("collections/{id}")
     @ApiOperation("添加收藏")
@@ -46,7 +46,7 @@ public class UserController {
      * 足迹
      */
     @GetMapping("footprints")
-    @ApiOperation("获得特定用户的足迹")
+    @ApiOperation("获得用户的足迹")
     public ArrayList<Object> getPrints(){ return new ArrayList<Object>(); }
     @PostMapping("footprints/{id}")
     @ApiOperation("添加足迹")
@@ -62,7 +62,7 @@ public class UserController {
      * 购物车
      */
     @GetMapping("cart-items")
-    @ApiOperation("查看购物车")
+    @ApiOperation("查看用户的购物车")
     public ArrayList<Object> getCartItems(){ return new ArrayList<Object>(); }
     @PostMapping("cart-items/{id}")
     @ApiOperation("加入购物车")
@@ -76,7 +76,7 @@ public class UserController {
      * 优惠券
      */
     @GetMapping("coupons")
-    @ApiOperation("查看所有优惠券")
+    @ApiOperation("查看用户的所有优惠券")
     public ArrayList<Object> getAllCouponsInfo(){ return new ArrayList<Object>(); }
     @GetMapping("coupons/{id}")
     @ApiOperation("查看特定优惠券信息")
@@ -88,18 +88,18 @@ public class UserController {
     /*
      * 分享活动
      */
-    @GetMapping("shares")
-    @ApiOperation("查看所有分享活动")
-    public ArrayList<Object> getAllShares(){ return new ArrayList<Object>(); }
-    @GetMapping("shares/{id}")
+    @GetMapping("shareItems")
+    @ApiOperation("查看用户的所有分享活动")
+    public ArrayList<Object> getAllShareItems(){ return new ArrayList<Object>(); }
+    @GetMapping("shareItems/{id}")
     @ApiOperation("查看特定分享活动")
-    public Object getOneShare(@ApiParam(name="id",value="分享活动id",required=true)@PathVariable("id")String id) { return new Object(); }
-    @PostMapping("shares/{id}/creation")
+    public Object getOneShareItem(@ApiParam(name="id",value="分享活动id",required=true)@PathVariable("id")String id) { return new Object(); }
+    @PostMapping("shareItems/{id}/creation")
     @ApiOperation("新建分享活动")
-    public Object addShare(@ApiParam(name="id",value="商品id",required=true)@PathVariable("id")String id){ return new Object(); }
-    @PostMapping("shares/{id}/participation")
+    public Object addShareItem(@ApiParam(name="id",value="商品id",required=true)@PathVariable("id")String id){ return new Object(); }
+    @PostMapping("shareItems/{id}/participation")
     @ApiOperation("参与分享活动")
-    public Object participantShare(@ApiParam(name="id",value="分享id",required=true)@PathVariable("id")String id){ return new Object(); }
+    public Object participantShareItem(@ApiParam(name="id",value="分享id",required=true)@PathVariable("id")String id){ return new Object(); }
 
 
     /*

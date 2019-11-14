@@ -15,7 +15,11 @@ public class CommonController {
 
     @GetMapping("goods/{id}/grouponRule")
     @ApiOperation(value = "查询特定商品上的团购规则")
-    public Object findRuleForGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
+    public Object findGrouponRuleForGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
+
+    @GetMapping("goods/{id}/shareRule")
+    @ApiOperation(value = "查询特定商品上的分享规则")
+    public Object findShareRuleForGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
 
     /*
      * 商品
@@ -63,20 +67,6 @@ public class CommonController {
     @GetMapping("pre-sale-goods/search")
     @ApiOperation(value = "根据名称查看相关预售商品")
     public ArrayList<Object> getPreSaleGoodsByName(@ApiParam(name="name",value="商品名",required=true) String name) { return new ArrayList<Object>(); }
-
-
-    /*
-     * 团购商品
-     */
-    @GetMapping("groupon-goods")
-    @ApiOperation(value = "查看所有团购商品")
-    public ArrayList<Object> getAllGrouponGoods(){ return new ArrayList<Object>(); }
-    @GetMapping("groupon-goods/{id}")
-    @ApiOperation(value = "查看特定团购商品")
-    public Object getGrouponGoods(@ApiParam(name="id",value="商品ID",required=true) @PathVariable("id") String id){ return new Object(); }
-    @GetMapping("groupon-goods/search")
-    @ApiOperation(value = "根据名称查看相关团购商品")
-    public ArrayList<Object> getGrouponGoodsByName(@ApiParam(name="name",value="商品名",required=true) String name) { return new ArrayList<Object>(); }
 
 
     /*
