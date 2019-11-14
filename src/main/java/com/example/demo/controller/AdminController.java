@@ -1,8 +1,12 @@
 package com.example.demo.controller;
 
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.*;
+
+@Api(value="AdminController",tags={"管理员操作接口"})
+@RestController
 @RequestMapping("")
 public class AdminController {
 
