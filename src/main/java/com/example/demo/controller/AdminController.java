@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.*;
 
 public class AdminController {
 
+    /*
+     * @brand
+     */
     @PostMapping("")
     @ApiOperation("添加品牌")
     public Object addBrand(){return new Object();}
@@ -19,6 +22,9 @@ public class AdminController {
     public Object updateBrand(){return new Object();}
 
 
+    /*
+     * @category
+     */
     @PostMapping("")
     @ApiOperation(value = "添加一级分类")
     public Object addCategory(){ return new Object(); }
@@ -43,7 +49,9 @@ public class AdminController {
     @ApiOperation(value = "修改特定一级分类下二级分类")
     public Object updateSubCategory(){ return new Object(); }
 
-
+    /*
+     * @coupon
+     */
     @GetMapping("coupon-rules")
     @ApiOperation("查看所有优惠券规则")
     public void getAllCouponRules(@ApiParam(name="couponId",value="优惠券id",required=true) @PathVariable String id){ return ; }
@@ -61,6 +69,9 @@ public class AdminController {
     public void updateCouponRule(){ return ; }
 
 
+    /*
+     * @goods
+     */
     @PostMapping("goods")
     @ApiOperation(value = "添加商品")
     public Object addGoods(){ return new Object(); }
