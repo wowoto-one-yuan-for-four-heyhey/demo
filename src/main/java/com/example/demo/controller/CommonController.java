@@ -27,7 +27,7 @@ public class CommonController {
     public Object getOneGoods(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
     @GetMapping("goods/search")
     @ApiOperation(value = "根据商品名称查看商品")
-    public Object getGoodsOfKeyWord(@ApiParam(name="goodsName",value="商品名",required=true) String goodsName) { return new Object(); }
+    public Object getGoodsOfName(@ApiParam(name="goodsName",value="商品名",required=true) String goodsName) { return new Object(); }
 
     /*
      * 品牌
@@ -61,7 +61,7 @@ public class CommonController {
     public Object getOnePreSaleGoods(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
     @GetMapping("pre-sale-goods/search")
     @ApiOperation(value = "根据名称查看相关预售商品")
-    public Object getPreSaleGoodsByKeyWord() { return new Object(); }
+    public Object getPreSaleGoodsByName(@ApiParam(name="goodsName",value="商品名",required=true) @PathVariable("goodsName") String goodsName) { return new Object(); }
 
 
     /*
@@ -74,8 +74,8 @@ public class CommonController {
     @ApiOperation(value = "查看特定团购商品")
     public Object getGrouponGoods(@ApiParam(name="goodsId",value="商品ID",required=true) @PathVariable("goodsId") String goodsId){ return new Object(); }
     @GetMapping("groupon-goods/search")
-    @ApiOperation(value = "根据关键字查看相关团购商品")
-    public Object getGrouponGoodsByKeyWord() { return new Object(); }
+    @ApiOperation(value = "根据名称查看相关团购商品")
+    public Object getGrouponGoodsByName(@ApiParam(name="goodsName",value="商品名",required=true) @PathVariable("goodsName") String goodsName) { return new Object(); }
 
 
     /*
