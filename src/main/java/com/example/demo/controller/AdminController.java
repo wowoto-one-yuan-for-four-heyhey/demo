@@ -113,15 +113,15 @@ public class AdminController {
      */
 
 
-    @PostMapping("goods/{goodsId}/groupon")
+    @PostMapping("goods/{goodsId}/grouponRule")
     @ApiOperation(value = "添加团购活动")
     public Object addRuleForGoods(){ return new Object(); }
 
-    @DeleteMapping("goods/{goodsId}/groupon/{grouponId}")
+    @DeleteMapping("goods/{goodsId}/grouponRule/{grouponRuleId}")
     @ApiOperation(value = "删除团购活动")
     public Object deleteRuleForGoods(){ return new Object(); }
 
-    @PutMapping("goods/{goodsId}/groupon/{grouponId}")
+    @PutMapping("goods/{goodsId}/grouponRule/{grouponRuleId}")
     @ApiOperation(value = "修改团购活动")
     public Object updateRuleForGoods(){ return new Object(); }
 
