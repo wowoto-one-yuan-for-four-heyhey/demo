@@ -90,7 +90,7 @@ public class UserController {
      */
     @GetMapping("shares")
     @ApiOperation("查看所有分享活动")
-    public Object getAllShares(){ return new Object(); }
+    public ArrayList<Object> getAllShares(){ return new ArrayList<Object>(); }
     @GetMapping("shares/{id}")
     @ApiOperation("查看特定分享活动")
     public Object getOneShare() { return new Object(); }
@@ -197,7 +197,6 @@ public class UserController {
     @ApiOperation("修改特定专题的特定评论")
     public void updateComment(){ }
 
-    
 }
 
 
