@@ -5,7 +5,6 @@ import com.example.demo.model.Address;
 import com.example.demo.service.UserService;
 import io.swagger.annotations.*;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -121,6 +120,7 @@ public class UserController {
     /*
      * 商品规格
      */
+
     /*
     @GetMapping("goods/{id}/specification")
     @ApiOperation(value = "查看特定商品的的所有规格信息")
@@ -139,14 +139,9 @@ public class UserController {
     @ApiOperation("查看用户的全部订单")
     public Object getOrders(){return new Object();}
 
-
     @GetMapping("orders/{orderId}")
     @ApiOperation("查看特定订单的订单详情")
     public Object getOrderDetail(){return new Object();}
-
-    @DeleteMapping("orders/{orderId}")
-    @ApiOperation("删除订单")
-    public Object deleteOrder(){return new Object();}
 
     /*
      * 状态
@@ -169,11 +164,15 @@ public class UserController {
 
     @PostMapping("orders/{orderId}/customerService")
     @ApiOperation("发起一项订单售后服务")
-    public Object addCustomerServiceOrder(){return new Object();}
+    public Object addOrderCustomerService(){return new Object();}
 
     @GetMapping("orders/{orderId}/customerService")
     @ApiOperation("查看订单下的对应售后服务")
-    public Object getCustomerServiceOrder(){return new Object();}
+    public Object getOrderCustomerService(){return new Object();}
+
+    @PostMapping("orders/{orderId}/customerService/{customerServiceId}")
+    @ApiOperation("发起一项订单售后服务")
+    public Object updateOrderCustomerService(){return new Object();}
 
     /*
      * 评论
@@ -187,19 +186,19 @@ public class UserController {
     @ApiOperation("查看评论")
     public Object getComment(){return new Object();}
 
-    @GetMapping("{topicId}/comments")
+    @GetMapping("topics/{topicId}/comments")
     @ApiOperation("查看特定专题的评论")
     public void getCommentsByTopicId(){ }
 
-    @PostMapping("{topicId}/comments")
+    @PostMapping("topics/{topicId}/comments")
     @ApiOperation("添加特定专题的评论")
     public void addTopicComment(){ }
 
-    @DeleteMapping("{topicId}/comments/{commentId}")
+    @DeleteMapping("topics/{topicId}/comments/{commentId}")
     @ApiOperation("删除特定专题的特定评论")
     public void deleteOneComment(){ }
 
-    @PutMapping("{topicId}/comments/{commentId}")
+    @PutMapping("topics/{topicId}/comments/{commentId}")
     @ApiOperation("修改特定专题的特定评论")
     public void updateComment(){ }
 
