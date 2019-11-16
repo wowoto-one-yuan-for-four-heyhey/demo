@@ -107,9 +107,6 @@ public class UserController {
      */
 
 
-    @GetMapping("categories/{id}/goods")
-    @ApiOperation("查看指定类别下的商品")
-    public ArrayList<Object> getGoodsBySubcategoryId(@ApiParam(name="id",value="类别id",required=true)@PathVariable("id")String id){return new ArrayList<Object>();}
 
 
     /*

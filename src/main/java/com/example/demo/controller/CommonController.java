@@ -55,6 +55,11 @@ public class CommonController {
     @ApiOperation("查看特定一级分类下二级分类")
     public ArrayList<Object> getSubCategories(@ApiParam(name="id",value="一级分类ID",required=true) @PathVariable("id") String id){return new ArrayList<Object>();}
 
+    @GetMapping("categories/{id}/goods")
+    @ApiOperation("查看指定类别下的商品")
+    public ArrayList<Object> getGoodsBySubcategoryId(@ApiParam(name="id",value="类别id",required=true)@PathVariable("id")String id){return new ArrayList<Object>();}
+
+
     /*
      * 预售商品
      */
