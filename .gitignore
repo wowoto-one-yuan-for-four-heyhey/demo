@@ -29,3 +29,9 @@ build/
 
 ### VS Code ###
 .vscode/
+/src/main/java/com/example/demo/controller/AdminController.java
+/src/main/java/com/example/demo/controller/CommonController.java
+/src/main/java/com/example/demo/controller/UserController.java
+!/src/main/java/com/example/demo/controller/CommonController.java
+!/src/main/java/com/example/demo/controller/UserController.java
+!/src/main/java/com/example/demo/controller/AdminController.java
